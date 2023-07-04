@@ -11,33 +11,41 @@ function App() {
       fontWeight="600"
     >
       <Flex direction="column" alignItems="center" mt="10px" mb="50px">
-        <Link fontSize="20px">ログ一覧</Link>
+        <Link fontSize="20px" _hover={{ textDecoration: "none" }}>
+          ログ一覧
+        </Link>
         <Divider width="200px" borderColor="BlackAlpha 800" />
-        <Link mt="10px">
+        <Link mt="10px" _hover={{ textDecoration: "none" }}>
           <EditIcon mr="8px" />
           工数登録
         </Link>
       </Flex>
       <Flex direction="column" alignItems="center" my="10px" mb="50px">
-        <Link fontSize="20px">ユーザ一覧</Link>
+        <Link fontSize="20px" _hover={{ textDecoration: "none" }}>
+          ユーザ一覧
+        </Link>
         <Divider width="200px" borderColor="BlackAlpha 800" />
       </Flex>
       <Flex direction="column" alignItems="center" my="10px" mb="50px">
-        <Link fontSize="20px">顧客一覧</Link>
+        <Link fontSize="20px" _hover={{ textDecoration: "none" }}>
+          顧客一覧
+        </Link>
         <Divider width="200px" borderColor="BlackAlpha 800" />
-        <Link mt="10px">
+        <Link mt="10px" _hover={{ textDecoration: "none" }}>
           <EditIcon mr="8px" />
           顧客登録
         </Link>
       </Flex>
       <Flex direction="column" alignItems="center" my="10px" mb="50px">
-        <Link fontSize="20px">案件一覧</Link>
+        <Link fontSize="20px" _hover={{ textDecoration: "none" }}>
+          案件一覧
+        </Link>
         <Divider width="200px" borderColor="BlackAlpha 800" />
-        <Link mt="10px">
+        <Link mt="10px" _hover={{ textDecoration: "none" }}>
           <EditIcon mr="8px" />
           案件登録
         </Link>
-        <Link mt="10px">
+        <Link mt="10px" _hover={{ textDecoration: "none" }}>
           <EditIcon mr="8px" />
           利益一覧
         </Link>
