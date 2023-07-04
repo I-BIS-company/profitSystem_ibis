@@ -1,6 +1,7 @@
 import { EditIcon } from "@chakra-ui/icons";
 import { Flex, Link } from "@chakra-ui/react";
-import { SBMainItem } from "./components/molecules/link+divider/SBMainItem";
+import { SBMainItem } from "./components/molecules/link/SBMainItem";
+import { SBSubItem } from "./components/molecules/link/SBSubItem";
 
 function App() {
   return (
@@ -13,31 +14,19 @@ function App() {
     >
       <Flex direction="column" alignItems="center" mt="10px" mb="50px">
         <SBMainItem text="ログ一覧" />
-        <Link mt="10px" _hover={{ textDecoration: "none" }}>
-          <EditIcon mr="8px" />
-          工数登録
-        </Link>
+        <SBSubItem text="工数登録" />
       </Flex>
       <Flex direction="column" alignItems="center" my="10px" mb="50px">
         <SBMainItem text="ユーザ一覧" />
       </Flex>
       <Flex direction="column" alignItems="center" my="10px" mb="50px">
         <SBMainItem text="顧客一覧" />
-        <Link mt="10px" _hover={{ textDecoration: "none" }}>
-          <EditIcon mr="8px" />
-          顧客登録
-        </Link>
+        <SBSubItem text="顧客登録" />
       </Flex>
       <Flex direction="column" alignItems="center" my="10px" mb="50px">
         <SBMainItem text="案件一覧" />
-        <Link mt="10px" _hover={{ textDecoration: "none" }}>
-          <EditIcon mr="8px" />
-          案件登録
-        </Link>
-        <Link mt="10px" _hover={{ textDecoration: "none" }}>
-          <EditIcon mr="8px" />
-          利益一覧
-        </Link>
+        <SBSubItem text="案件登録" />
+        <SBSubItem text="利益一覧" />
       </Flex>
     </Flex>
   );
