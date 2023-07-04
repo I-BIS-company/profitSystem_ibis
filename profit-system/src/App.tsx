@@ -1,5 +1,6 @@
 import { EditIcon } from "@chakra-ui/icons";
-import { Flex, Link, Divider } from "@chakra-ui/react";
+import { Flex, Link } from "@chakra-ui/react";
+import { SBMainItem } from "./components/molecules/link+divider/SBMainItem";
 
 function App() {
   return (
@@ -11,36 +12,24 @@ function App() {
       fontWeight="600"
     >
       <Flex direction="column" alignItems="center" mt="10px" mb="50px">
-        <Link fontSize="20px" _hover={{ textDecoration: "none" }}>
-          ログ一覧
-        </Link>
-        <Divider width="200px" borderColor="BlackAlpha 800" />
+        <SBMainItem text="ログ一覧" />
         <Link mt="10px" _hover={{ textDecoration: "none" }}>
           <EditIcon mr="8px" />
           工数登録
         </Link>
       </Flex>
       <Flex direction="column" alignItems="center" my="10px" mb="50px">
-        <Link fontSize="20px" _hover={{ textDecoration: "none" }}>
-          ユーザ一覧
-        </Link>
-        <Divider width="200px" borderColor="BlackAlpha 800" />
+        <SBMainItem text="ユーザ一覧" />
       </Flex>
       <Flex direction="column" alignItems="center" my="10px" mb="50px">
-        <Link fontSize="20px" _hover={{ textDecoration: "none" }}>
-          顧客一覧
-        </Link>
-        <Divider width="200px" borderColor="BlackAlpha 800" />
+        <SBMainItem text="顧客一覧" />
         <Link mt="10px" _hover={{ textDecoration: "none" }}>
           <EditIcon mr="8px" />
           顧客登録
         </Link>
       </Flex>
       <Flex direction="column" alignItems="center" my="10px" mb="50px">
-        <Link fontSize="20px" _hover={{ textDecoration: "none" }}>
-          案件一覧
-        </Link>
-        <Divider width="200px" borderColor="BlackAlpha 800" />
+        <SBMainItem text="案件一覧" />
         <Link mt="10px" _hover={{ textDecoration: "none" }}>
           <EditIcon mr="8px" />
           案件登録
