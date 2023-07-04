@@ -1,11 +1,11 @@
 import { Divider, Link } from "@chakra-ui/react";
-import { memo } from "react";
+import { memo, FC } from "react";
 
 type Props = {
   text: string;
 };
 
-export const SBMainItem: React.FC<Props> = memo((props) => {
+export const SBMainItem: FC<Props> = memo((props) => {
   const { text } = props;
 
   return (
