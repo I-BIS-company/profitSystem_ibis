@@ -1,12 +1,20 @@
-import { Box, Flex, Heading } from "@chakra-ui/react";
+import {  Button, Flex } from "@chakra-ui/react";
 import { FC, memo } from "react";
 
 export const Login: FC = memo(() => {
     return (
-        <Flex>
-            <Box>
-                <Heading></Heading>
-            </Box>
-        </Flex>
+        <Flex height="100vh" align="center" justify="center">
+        <Button
+          bg="orange.300"
+          color="blackAlpha.900"
+          size="lg"
+          py={8}
+          px={24}
+          shadow="md"
+          _hover={{opacity:.8}}
+          >
+          ログイン
+        </Button>
+      </Flex>
     );
 });
