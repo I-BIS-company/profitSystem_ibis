@@ -5,7 +5,7 @@ type Props = {
   children: ReactNode;
 };
 
-export const MainLayout: FC<Props> = memo((props) => {
+export const MainTemplate: FC<Props> = memo((props) => {
   const { children } = props;
 
   return (
