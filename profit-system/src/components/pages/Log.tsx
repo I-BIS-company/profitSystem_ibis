@@ -1,5 +1,6 @@
 import { FC, memo } from "react";
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { Sidebar } from "../organisms/Sidebar";
 import { PrimaryButton } from "../atoms/button/PrimaryButton";
 import { Flex } from "@chakra-ui/react";
@@ -21,6 +22,9 @@ export const Log: FC = memo(() => {
   });
 =======
 import { Sidebar } from "../organisms/sidebar/Sidebar";
+=======
+import { Sidebar } from "../organisms/Sidebar";
+>>>>>>> 4834190 (Remove sidebar folder)
 
 export const Log: FC = memo(() => {
   return (
