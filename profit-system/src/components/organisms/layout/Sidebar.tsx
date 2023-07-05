@@ -1,8 +1,8 @@
 import { Flex } from "@chakra-ui/react";
 import { memo, FC } from "react";
 import { SbItemsContainer } from "../../molecules/container/SbItemsContainer";
-import { SbMainItem } from "../../molecules/link/SbMainItem";
-import { SbSubItem } from "../../molecules/link/SbSubItem";
+import { SbMainItem } from "../../atoms/item/SbMainItem";
+import { SbSubItem } from "../../atoms/item/SbSubItem";
 
 export const Sidebar: FC = memo(() => {
   return (
