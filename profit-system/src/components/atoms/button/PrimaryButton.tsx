@@ -15,6 +15,7 @@ export const PrimaryButton: FC<Props> = memo((props) => {
         py={2}
         px={16}
         shadow="md"
+        variant="outline"
         _hover={{opacity:.8}}
         >
         {Text}
