@@ -1,8 +1,8 @@
 import { Flex } from "@chakra-ui/react";
 import { memo, FC } from "react";
-import { SBItemsContainer } from "../../molecules/container/SBItemsContainer";
-import { SBMainItem } from "../../molecules/link/SBMainItem";
-import { SBSubItem } from "../../molecules/link/SBSubItem";
+import { SbItemsContainer } from "../../molecules/container/SbItemsContainer";
+import { SbMainItem } from "../../molecules/link/SbMainItem";
+import { SbSubItem } from "../../molecules/link/SbSubItem";
 
 export const Sidebar: FC = memo(() => {
   return (
@@ -14,22 +14,22 @@ export const Sidebar: FC = memo(() => {
         height="100vh"
         fontWeight="600"
       >
-        <SBItemsContainer>
-          <SBMainItem text="ログ一覧" />
-          <SBSubItem text="工数登録" />
-        </SBItemsContainer>
-        <SBItemsContainer>
-          <SBMainItem text="ユーザ一覧" />
-        </SBItemsContainer>
-        <SBItemsContainer>
-          <SBMainItem text="顧客一覧" />
-          <SBSubItem text="顧客登録" />
-        </SBItemsContainer>
-        <SBItemsContainer>
-          <SBMainItem text="案件一覧" />
-          <SBSubItem text="案件登録" />
-          <SBSubItem text="利益一覧" />
-        </SBItemsContainer>
+        <SbItemsContainer>
+          <SbMainItem text="ログ一覧" />
+          <SbSubItem text="工数登録" />
+        </SbItemsContainer>
+        <SbItemsContainer>
+          <SbMainItem text="ユーザ一覧" />
+        </SbItemsContainer>
+        <SbItemsContainer>
+          <SbMainItem text="顧客一覧" />
+          <SbSubItem text="顧客登録" />
+        </SbItemsContainer>
+        <SbItemsContainer>
+          <SbMainItem text="案件一覧" />
+          <SbSubItem text="案件登録" />
+          <SbSubItem text="利益一覧" />
+        </SbItemsContainer>
       </Flex>
     </>
   );
