@@ -5,7 +5,7 @@ type Props = {
   children: ReactNode;
 };
 
-export const SBItemsContainer: FC<Props> = memo((props) => {
+export const SbItemsContainer: FC<Props> = memo((props) => {
   const { children } = props;
 
   return (

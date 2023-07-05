@@ -6,7 +6,7 @@ type Props = {
   text: string;
 };
 
-export const SBSubItem: FC<Props> = memo((props) => {
+export const SbSubItem: FC<Props> = memo((props) => {
   const { text } = props;
 
   return (
