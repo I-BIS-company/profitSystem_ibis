@@ -1,5 +1,5 @@
 import { FC, memo } from "react";
-import { Sidebar } from "../organisms/sidebar/Sidebar";
+import { Sidebar } from "../organisms/Sidebar";
 
 export const Log: FC = memo(() => {
   return (
