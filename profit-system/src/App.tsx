@@ -1,4 +1,4 @@
-import { Sidebar } from "./components/organisms/layout/Sidebar";
+import { Sidebar } from "./components/organisms/sidebar/Sidebar";
 
 function App() {
   return <Sidebar />;

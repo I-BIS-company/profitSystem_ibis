@@ -1,5 +1,5 @@
 import { memo, FC, ReactNode } from "react";
-import { Sidebar } from "../organisms/layout/Sidebar";
+import { Sidebar } from "../organisms/sidebar/Sidebar";
 
 type Props = {
   children: ReactNode;
