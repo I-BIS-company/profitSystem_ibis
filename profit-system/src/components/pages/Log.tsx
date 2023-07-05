@@ -1,4 +1,5 @@
 import { FC, memo } from "react";
+<<<<<<< HEAD
 import { Sidebar } from "../organisms/Sidebar";
 import { PrimaryButton } from "../atoms/button/PrimaryButton";
 import { Flex } from "@chakra-ui/react";
@@ -18,3 +19,15 @@ export const Log: FC = memo(() => {
       </>
     );
   });
+=======
+import { Sidebar } from "../organisms/sidebar/Sidebar";
+
+export const Log: FC = memo(() => {
+  return (
+    <>
+      <Sidebar />
+      <p>ログページです</p>;
+    </>
+  );
+});
+>>>>>>> ae13bd8 (Add Sidebar component to Log page)
