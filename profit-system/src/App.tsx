@@ -2,12 +2,14 @@ import { BrowserRouter } from "react-router-dom";
 
 import { Router } from "./router/Router";
 
+/*  テスト */
+
 function App() {
   return (
-      <BrowserRouter>
-        <Router />
-      </BrowserRouter>
-  )
+    <BrowserRouter>
+      <Router />
+    </BrowserRouter>
+  );
 }
 
 export default App;
