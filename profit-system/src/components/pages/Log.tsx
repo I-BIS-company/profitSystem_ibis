@@ -1,5 +1,11 @@
 import { FC, memo } from "react";
+import { Sidebar } from "../organisms/Sidebar";
 
 export const Log: FC = memo(() => {
-    return <p>ログページです</p>;
+  return (
+    <>
+      <Sidebar />
+      <p>ログページです</p>;
+    </>
+  );
 });
