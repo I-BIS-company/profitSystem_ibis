@@ -5,6 +5,6 @@ import { FC } from "react";
 
 export const UserIcon: FC = () => {
   return (
-    <Icon as={FontAwesomeIcon} icon={faCircleUser} boxSize={6} />
+    <Icon as={FontAwesomeIcon} icon={faCircleUser} boxSize={5} />
   );
 };
