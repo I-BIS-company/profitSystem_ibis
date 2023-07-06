@@ -4,14 +4,15 @@ import { EditIcon } from "@chakra-ui/icons";
 
 type Props = {
   text: string;
+  path: string;
 };
 
 export const SbSubItem: FC<Props> = memo((props) => {
-  const { text } = props;
+  const { text, path } = props;
 
   return (
     <>
-      <Link mt="10px" _hover={{ textDecoration: "none" }}>
+      <Link href={path} mt="10px" _hover={{ textDecoration: "none" }}>
         <EditIcon mr="8px" />
         {text}
       </Link>
