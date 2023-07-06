@@ -1,5 +1,7 @@
-import { Flex } from "@chakra-ui/react";
+import { Box, CheckboxIcon, Flex } from "@chakra-ui/react";
 import { memo, FC } from "react";
+import { ChevronDownIcon } from "@chakra-ui/icons";
+import { UserIcon } from "../atoms/item/usericon";
 
 
 export const Header: FC = memo(() => {
@@ -18,7 +20,10 @@ export const Header: FC = memo(() => {
       <div>アイビス株式会社</div>
 
       {/* 右側の要素 */}
-      <div>右側の要素</div>
+      <UserIcon />
+      <Box>
+      <ChevronDownIcon />
+      </Box>
     </Flex>
     </>
   );
