@@ -1,13 +1,14 @@
 import { FC, memo } from "react";
+import { Sidebar } from "../organisms/Sidebar";
 import { PrimaryButton } from "../atoms/button/PrimaryButton";
 import { SecondaryButton } from "../atoms/button/SecondaryButton";
 
 export const Log: FC = memo(() => {
     return (
-        <>
-        <p>ログページです</p>
+      <>
+        <Sidebar />
+        <p>ログページです</p>;
         <PrimaryButton Text="登録" />
-        <br />
         <br />
         <SecondaryButton Text="編集"/>
         </>
