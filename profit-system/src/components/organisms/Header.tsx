@@ -1,7 +1,7 @@
 import { Flex, Text } from "@chakra-ui/react";
 import { memo, FC } from "react";
-import { ChevronDownIcon } from "@chakra-ui/icons";
-import { UserIcon } from "../atoms/item/UserIcon";
+
+import { UserName } from "../atoms/item/UserName";
 
 
 export const Header: FC = memo(() => {
@@ -17,7 +17,7 @@ export const Header: FC = memo(() => {
       px={16}
     >
       {/* 左側の要素 */}
-      <div>アイビス株式会社</div>
+      <Text>アイビス株式会社</Text>
 
       {/* 右側の要素 */}
       <Flex
@@ -25,14 +25,7 @@ export const Header: FC = memo(() => {
         justifyContent="space-between"
         alignItems="center"
       >
-      <UserIcon />
-      <Text
-        m={0}
-        fontSize="14px"
-        _hover={{cursor:"pointer"}}
-      >
-        ユーザ 太郎</Text>
-      <ChevronDownIcon />
+      <UserName />
       </Flex>
     </Flex>
     </>
