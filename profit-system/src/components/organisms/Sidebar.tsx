@@ -10,6 +10,7 @@ export const Sidebar: FC = memo(() => {
       <Flex
         direction="column"
         maxW="256px"
+        w="256px"
         backgroundColor="orange.50"
         height="100vh"
         fontWeight="600"
