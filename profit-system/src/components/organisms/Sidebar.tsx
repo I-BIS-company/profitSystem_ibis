@@ -11,7 +11,7 @@ export const Sidebar: FC = memo(() => {
         direction="column"
         maxW="256px"
         backgroundColor="orange.50"
-        height="100vh"
+        minH="100vh"
         fontWeight="600"
       >
         <SbItemsContainer>
