@@ -1,12 +1,14 @@
 import { FC } from "react";
-import { UserIcon } from "./UserIcon";
 import { Text } from "@chakra-ui/react";
 import { ChevronDownIcon } from "@chakra-ui/icons";
+import { Icon } from "@chakra-ui/react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCircleUser } from "@fortawesome/free-solid-svg-icons";
 
 export const UserName:FC = () => {
     return(
         <>
-        <UserIcon />
+        <Icon as={FontAwesomeIcon} icon={faCircleUser} boxSize={5} />
       <Text
         m={0}
         fontSize="14px"

@@ -1,7 +1,7 @@
 import { Flex, Text } from "@chakra-ui/react";
 import { memo, FC } from "react";
 
-import { UserName } from "../atoms/item/UserName";
+import { UserName } from "../atoms/UserName";
 
 
 export const Header: FC = memo(() => {
