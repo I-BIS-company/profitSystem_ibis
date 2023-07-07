@@ -12,8 +12,8 @@ export const MainTemplate: FC<Props> = memo((props) => {
 
   return (
     <>
+    <Header />
       <Flex>
-        <Header />
         <Sidebar />
         {children}
       </Flex>
