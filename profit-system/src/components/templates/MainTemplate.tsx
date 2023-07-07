@@ -3,6 +3,7 @@ import { Sidebar } from "../organisms/Sidebar";
 import { Header } from "../organisms/Header";
 import { Flex } from "@chakra-ui/react";
 
+
 type Props = {
   children: ReactNode;
 };
