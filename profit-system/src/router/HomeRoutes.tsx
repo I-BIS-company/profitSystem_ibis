@@ -17,11 +17,11 @@ export const homeRoutes = [
     element: <Log />,
   },
   {
-    path: "/workhour_register",
+    path: "/log/workhour_register",
     element: <WorkhourRegister />,
   },
   {
-    path: "/workhour_edit",
+    path: "/log/workhour_edit",
     element: <WorkhourEdit />,
   },
   {
@@ -29,7 +29,7 @@ export const homeRoutes = [
     element: <UsersList />,
   },
   {
-    path: "/user_edit",
+    path: "/users_list/user_edit",
     element: <UserEdit />,
   },
   {
@@ -37,11 +37,11 @@ export const homeRoutes = [
     element: <CompaniesList />,
   },
   {
-    path: "/company_register",
+    path: "/companies_list/company_register",
     element: <CompanyRegister />,
   },
   {
-    path: "/company_edit",
+    path: "/companies_list/company_edit",
     element: <CompanyEdit />,
   },
   {
@@ -49,15 +49,15 @@ export const homeRoutes = [
     element: <ProjectsList />,
   },
   {
-    path: "/project_register",
+    path: "/projects_list/project_register",
     element: <ProjectRegister />,
   },
   {
-    path: "/project_edit",
+    path: "/projects_list/project_edit",
     element: <ProjectEdit />,
   },
   {
-    path: "/profits_list",
+    path: "/projects_list/profits_list",
     element: <ProfitsList />,
   },
 ];
