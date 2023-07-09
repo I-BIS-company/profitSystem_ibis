@@ -1,7 +1,20 @@
-import { Box, Flex, Heading, Icon, Select, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Flex,
+  Heading,
+  Select,
+  Table,
+  Tbody,
+  Td,
+  Text,
+  Th,
+  Thead,
+  Tr,
+} from "@chakra-ui/react";
 import { FC, memo } from "react";
 import { PrimaryButton } from "../atoms/button/PrimaryButton";
 import { CalendarIcon } from "@chakra-ui/icons";
+import { SecondaryButton } from "../atoms/button/SecondaryButton";
 
 export const Log: FC = memo(() => {
   return (
@@ -21,11 +34,39 @@ export const Log: FC = memo(() => {
           </Box>
         </Flex>
 
-        <Box>
+        <Box mb="50">
           <Flex alignItems="center">
             <CalendarIcon mr="15" />
             <Text>2023/6/2</Text>
           </Flex>
+        </Box>
+
+        <Box bg="white">
+          <Table variant="simple">
+            <Thead>
+              <Tr>
+                <Th>担当者名</Th>
+                <Th>担当案件</Th>
+                <Th>時間(工数)</Th>
+              </Tr>
+            </Thead>
+            <Tbody alignItems="center">
+              <Tr>
+                <Td>ユーザ太郎</Td>
+                <Td>xxxシステム開発</Td>
+                <Td>10時間</Td>
+                <SecondaryButton Text="編集" Size="sm" />
+              </Tr>
+            </Tbody>
+            <Tbody>
+              <Tr>
+                <Td>ユーザ二郎</Td>
+                <Td>xxxシステム開発</Td>
+                <Td>5時間</Td>
+                <SecondaryButton Text="編集" Size="sm" />
+              </Tr>
+            </Tbody>
+          </Table>
         </Box>
       </Box>
     </>

@@ -3,24 +3,24 @@ import { FC, memo } from "react";
 
 type Props = {
   Text: string;
+  Size: string;
 };
 
 export const SecondaryButton: FC<Props> = memo((props) => {
-    const { Text } = props;
+  const { Text, Size } = props;
   return (
     <Button
-        bg="white"
-        color="blackAlpha.900"
-        size="md"
-        py={2}
-        px={6}
-        shadow="md"
-        variant="outline"
-        borderColor="black"
-        _hover={{opacity:.8}}
-        >
-        {Text}
+      bg="white"
+      color="blackAlpha.900"
+      size={Size}
+      py={2}
+      px={6}
+      shadow="md"
+      variant="outline"
+      borderColor="black"
+      _hover={{ opacity: 0.8 }}
+    >
+      {Text}
     </Button>
-    
   );
 });
