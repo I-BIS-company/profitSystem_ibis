@@ -25,7 +25,7 @@ export const Log: FC = memo(() => {
         </Box>
         <Flex justifyContent="space-between" w="100%" mb="14">
           <Box>
-            <Select bg="white">
+            <Select bg="white" outline="none">
               <option>2023/06</option>
               <option>2023/07</option>
               <option>2023/08</option>
@@ -36,21 +36,31 @@ export const Log: FC = memo(() => {
           </Box>
         </Flex>
 
-        <Box mb="50">
+        <Box mb="25">
           <Flex alignItems="center">
             <CalendarIcon mr="15" />
             <Text>2023/6/2</Text>
           </Flex>
         </Box>
 
-        <Box bg="white" mb="70">
+        <Box bg="white" mb="70" borderRadius="5px" boxShadow="base">
           <Table variant="simple">
             <Thead>
               <Tr>
-                <Th color="blue.500" fontSize="16">
+                <Th
+                  color="blue.500"
+                  fontSize="16"
+                  borderRight="1px solid"
+                  borderRightColor="blackAlpha.200"
+                >
                   担当者名
                 </Th>
-                <Th color="blue.500" fontSize="16">
+                <Th
+                  color="blue.500"
+                  fontSize="16"
+                  borderRight="1px solid"
+                  borderRightColor="blackAlpha.200"
+                >
                   担当案件
                 </Th>
                 <Th color="blue.500" fontSize="16">
@@ -60,31 +70,53 @@ export const Log: FC = memo(() => {
             </Thead>
             <Tbody alignItems="center">
               <Tr fontSize="14">
-                <Td>ユーザ太郎</Td>
-                <Td>xxxシステム開発</Td>
+                <Td borderRight="1px solid" borderRightColor="blackAlpha.200">
+                  ユーザ太郎
+                </Td>
+                <Td borderRight="1px solid" borderRightColor="blackAlpha.200">
+                  xxxシステム開発
+                </Td>
                 <Td>10時間</Td>
-                <SecondaryButton Text="編集" Size="sm" />
+                <Box
+                  display="flex"
+                  justifyContent="center"
+                  alignItems="center"
+                  pt="2.5"
+                >
+                  <SecondaryButton Text="編集" Size="sm" />
+                </Box>
               </Tr>
             </Tbody>
             <Tbody>
               <Tr fontSize="14">
-                <Td>ユーザ二郎</Td>
-                <Td>xxxシステム開発</Td>
+                <Td borderRight="1px solid" borderRightColor="blackAlpha.200">
+                  ユーザ二郎
+                </Td>
+                <Td borderRight="1px solid" borderRightColor="blackAlpha.200">
+                  xxxシステム開発
+                </Td>
                 <Td>5時間</Td>
-                <SecondaryButton Text="編集" Size="sm" />
+                <Box
+                  display="flex"
+                  justifyContent="center"
+                  alignItems="center"
+                  pt="2.5"
+                >
+                  <SecondaryButton Text="編集" Size="sm" />
+                </Box>
               </Tr>
             </Tbody>
           </Table>
         </Box>
 
-        <Box mb="50">
+        <Box mb="25">
           <Flex alignItems="center">
             <CalendarIcon mr="15" />
             <Text>2023/6/1</Text>
           </Flex>
         </Box>
 
-        <Box bg="white">
+        <Box bg="white" mb="70">
           <Table variant="simple">
             <Thead>
               <Tr>
