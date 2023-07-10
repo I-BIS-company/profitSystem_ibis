@@ -6,6 +6,7 @@ import { HeadLine } from "../atoms/HeadLine";
 import { DateSearch } from "../atoms/searchs/dateSearch";
 import { MainScreenTopContainer } from "../molecules/container/MainScreenTopContainer";
 import { LogDate } from "../atoms/LogDate";
+import { ContentTemplate } from "../molecules/container/ContentTemplate";
 
 export const Log: FC = memo(() => {
   return (
@@ -21,7 +22,7 @@ export const Log: FC = memo(() => {
 
         <LogDate Date="2023/6/2" />
 
-        <Box bg="white" mb="70" borderRadius="5px" boxShadow="base">
+        <ContentTemplate>
           <Table variant="simple">
             <Thead>
               <Tr>
@@ -85,7 +86,7 @@ export const Log: FC = memo(() => {
               </Tr>
             </Tbody>
           </Table>
-        </Box>
+        </ContentTemplate>
       </Box>
     </>
   );
