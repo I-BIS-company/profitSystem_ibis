@@ -5,7 +5,7 @@ type Props = {
   children: ReactNode;
 };
 
-export const ContentTemplate: FC<Props> = memo((props) => {
+export const ContentBgTemplate: FC<Props> = memo((props) => {
   const { children } = props;
 
   return (

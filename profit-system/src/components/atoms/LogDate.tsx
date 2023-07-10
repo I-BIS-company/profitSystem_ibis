@@ -1,5 +1,5 @@
 import { CalendarIcon } from "@chakra-ui/icons";
-import { Box, Flex, Heading, Text } from "@chakra-ui/react";
+import { Box, Flex, Text } from "@chakra-ui/react";
 import { FC } from "react";
 
 type Props = {

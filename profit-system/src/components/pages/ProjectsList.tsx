@@ -4,7 +4,7 @@ import { HeadLine } from "../atoms/HeadLine";
 import { MainScreenTopContainer } from "../molecules/container/MainScreenTopContainer";
 import { DateSearch } from "../atoms/searchs/dateSearch";
 import { PrimaryButton } from "../atoms/button/PrimaryButton";
-import { ContentTemplate } from "../molecules/container/ContentTemplate";
+import { ContentBgTemplate } from "../molecules/container/ContentBgTemplate";
 
 export const ProjectsList: FC = memo(() => {
   return (
@@ -18,9 +18,9 @@ export const ProjectsList: FC = memo(() => {
         </Box>
       </MainScreenTopContainer>
 
-      <ContentTemplate>
+      <ContentBgTemplate>
         <p>aaa</p>
-      </ContentTemplate>
+      </ContentBgTemplate>
     </Box>
   );
 });
