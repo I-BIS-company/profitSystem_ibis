@@ -8,19 +8,19 @@ import { ContentBgTemplate } from "../molecules/container/ContentBgTemplate";
 
 export const ProjectsList: FC = memo(() => {
   return (
-    <Box mr="10%" ml="10%" maxW="100%" w="100%" mt="5%">
-      <HeadLine Text="案件一覧" />
+    <>
+      <HeadLine text="案件一覧" />
 
       <MainScreenTopContainer>
         <DateSearch />
         <Box>
-          <PrimaryButton Text="案件を登録する" />
+          <PrimaryButton text="案件を登録する" />
         </Box>
       </MainScreenTopContainer>
 
       <ContentBgTemplate>
         <p>aaa</p>
       </ContentBgTemplate>
-    </Box>
+    </>
   );
 });

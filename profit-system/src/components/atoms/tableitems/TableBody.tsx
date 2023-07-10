@@ -2,15 +2,15 @@ import { Td } from "@chakra-ui/react";
 import { FC } from "react";
 
 type Props = {
-  Text: string;
+  text: string;
 };
 
 export const TableBody: FC<Props> = (props) => {
-  const { Text } = props;
+  const { text } = props;
 
   return (
     <Td borderRight="1px solid" borderRightColor="blackAlpha.200">
-      {Text}
+      {text}
     </Td>
   );
 };

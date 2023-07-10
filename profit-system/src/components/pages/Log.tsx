@@ -11,27 +11,25 @@ import { LogTableTemplate } from "../molecules/tablelist/LogTableTemplate";
 export const Log: FC = memo(() => {
   return (
     <>
-      <Box mr="10%" ml="10%" maxW="100%" w="100%" mt="5%">
-        <HeadLine Text="ログ" />
-        <MainScreenTopContainer>
-          <DateSearch />
-          <Box>
-            <PrimaryButton Text="工数を登録する" />
-          </Box>
-        </MainScreenTopContainer>
+      <HeadLine text="ログ" />
+      <MainScreenTopContainer>
+        <DateSearch />
+        <Box>
+          <PrimaryButton text="工数を登録する" />
+        </Box>
+      </MainScreenTopContainer>
 
-        <LogDate Date="2023/6/2" />
+      <LogDate date="2023/6/2" />
 
-        <ContentBgTemplate>
-          <LogTableTemplate />
-        </ContentBgTemplate>
+      <ContentBgTemplate>
+        <LogTableTemplate />
+      </ContentBgTemplate>
 
-        <LogDate Date="2023/6/1" />
+      <LogDate date="2023/6/1" />
 
-        <ContentBgTemplate>
-          <LogTableTemplate />
-        </ContentBgTemplate>
-      </Box>
+      <ContentBgTemplate>
+        <LogTableTemplate />
+      </ContentBgTemplate>
     </>
   );
 });

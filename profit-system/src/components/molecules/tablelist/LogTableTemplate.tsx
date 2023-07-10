@@ -10,17 +10,17 @@ export const LogTableTemplate: FC = memo(() => {
       <Table variant="simple">
         <Thead>
           <Tr>
-            <TableHead Text="担当者名" />
-            <TableHead Text="担当案件" />
-            <TableHead Text="時間(工数)" />
+            <TableHead text="担当者名" />
+            <TableHead text="担当案件" />
+            <TableHead text="時間(工数)" />
           </Tr>
         </Thead>
 
         <Tbody alignItems="center">
           <Tr fontSize="14">
-            <TableBody Text="ユーザ 太郎" />
-            <TableBody Text="xxxxシステム開発" />
-            <TableBody Text="10時間" />
+            <TableBody text="ユーザ 太郎" />
+            <TableBody text="xxxxシステム開発" />
+            <TableBody text="10時間" />
 
             <Box
               display="flex"
@@ -28,13 +28,13 @@ export const LogTableTemplate: FC = memo(() => {
               alignItems="center"
               pt="2.5"
             >
-              <SecondaryButton Text="編集" Size="sm" />
+              <SecondaryButton text="編集" size="sm" />
             </Box>
           </Tr>
           <Tr fontSize="14">
-            <TableBody Text="ユーザ 太郎" />
-            <TableBody Text="xxxxシステム開発" />
-            <TableBody Text="10時間" />
+            <TableBody text="ユーザ 太郎" />
+            <TableBody text="xxxxシステム開発" />
+            <TableBody text="10時間" />
 
             <Box
               display="flex"
@@ -42,7 +42,7 @@ export const LogTableTemplate: FC = memo(() => {
               alignItems="center"
               pt="2.5"
             >
-              <SecondaryButton Text="編集" Size="sm" />
+              <SecondaryButton text="編集" size="sm" />
             </Box>
           </Tr>
         </Tbody>
