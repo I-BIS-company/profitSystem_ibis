@@ -1,4 +1,4 @@
-import { Box, Table, Tbody, Td, Thead, Tr } from "@chakra-ui/react";
+import { Box, Table, Tbody, Thead, Tr } from "@chakra-ui/react";
 import { memo, FC } from "react";
 import { TableHead } from "../../atoms/tableitems/TableHead";
 import { TableBody } from "../../atoms/tableitems/TableBody";
