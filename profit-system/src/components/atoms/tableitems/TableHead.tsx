@@ -2,11 +2,11 @@ import { Th } from "@chakra-ui/react";
 import { FC } from "react";
 
 type Props = {
-  Text: string;
+  text: string;
 };
 
 export const TableHead: FC<Props> = (props) => {
-  const { Text } = props;
+  const { text } = props;
 
   return (
     <Th
@@ -15,7 +15,7 @@ export const TableHead: FC<Props> = (props) => {
       borderRight="1px solid"
       borderRightColor="blackAlpha.200"
     >
-      {Text}
+      {text}
     </Th>
   );
 };

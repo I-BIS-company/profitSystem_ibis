@@ -2,17 +2,17 @@ import { Button } from "@chakra-ui/react";
 import { FC, memo } from "react";
 
 type Props = {
-  Text: string;
-  Size: string;
+  text: string;
+  size: string;
 };
 
 export const SecondaryButton: FC<Props> = memo((props) => {
-  const { Text, Size } = props;
+  const { text, size } = props;
   return (
     <Button
       bg="white"
       color="blackAlpha.900"
-      size={Size}
+      size={size}
       py={2}
       px={6}
       shadow="md"
@@ -20,7 +20,7 @@ export const SecondaryButton: FC<Props> = memo((props) => {
       borderColor="black"
       _hover={{ opacity: 0.8 }}
     >
-      {Text}
+      {text}
     </Button>
   );
 });
