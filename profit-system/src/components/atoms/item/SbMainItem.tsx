@@ -1,17 +1,18 @@
 import { Divider, Link } from "@chakra-ui/react";
 import { memo, FC } from "react";
-import { useLocation } from "react-router-dom";
+import { Location } from "react-router-dom";
 
 type Props = {
   text: string;
   path: string;
+  location: Location;
 };
 
 export const SbMainItem: FC<Props> = memo((props) => {
-  const { text, path } = props;
+  const { text, path, location } = props;
 
-  const location = useLocation();
-  const matchPath = location.pathname === path;
+  const findPath = location.pathname.indexOf(path);
+  const matchPath = findPath === 0;
 
   return (
     <>
