@@ -20,7 +20,9 @@ export const Log: FC = memo(() => {
   return (
     <>
       <Box mr="10%" ml="10%" maxW="100%" w="100%" mt="5%">
-        <Heading mb="50">ログ</Heading>
+        <Box borderLeft="6px solid blue" borderColor="blue.500" pl="4">
+          <Heading mb="50">ログ</Heading>
+        </Box>
         <Flex justifyContent="space-between" w="100%" mb="14">
           <Box>
             <Select bg="white">
