@@ -11,6 +11,7 @@ import { LogTableTemplate } from "../molecules/tablelist/LogTableTemplate";
 export const Log: FC = memo(() => {
   return (
     <>
+      {/* test */}
       <HeadLine text="ログ" />
       <MainScreenTopContainer>
         <DateSearch />
