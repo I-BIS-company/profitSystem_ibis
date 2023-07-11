@@ -5,7 +5,7 @@ export const Log: FC = memo(() => {
   return (
     <>
       <p>ログページです</p>;
-      <PrimaryButton Text="登録" />
+      <PrimaryButton text="登録" size="lg" />
     </>
   );
 });
