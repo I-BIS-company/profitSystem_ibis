@@ -13,7 +13,7 @@ export const Log: FC = memo(() => {
     <>
       <HeadLine text="ログ" />
       <MainScreenTopContainer>
-        <DateSearch />
+        <DateSearchSelect />
         <Box>
           <PrimaryButton text="工数を登録する" />
         </Box>
