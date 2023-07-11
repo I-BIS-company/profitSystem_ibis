@@ -18,18 +18,18 @@ export const Log: FC = memo(() => {
           <PrimaryButton text="工数を登録する" />
         </Box>
       </MainScreenTopContainer>
-
-      <LogDate date="2023/6/2" />
-
-      <ContentBgTemplate>
-        <LogTableTemplate />
-      </ContentBgTemplate>
-
-      <LogDate date="2023/6/1" />
-
-      <ContentBgTemplate>
-        <LogTableTemplate />
-      </ContentBgTemplate>
+      <Box>
+        <LogDate date="2023/6/2" />
+        <ContentBgTemplate>
+          <LogTableTemplate />
+        </ContentBgTemplate>
+      </Box>
+      <Box>
+        <LogDate date="2023/6/1" />
+        <ContentBgTemplate>
+          <LogTableTemplate />
+        </ContentBgTemplate>
+      </Box>
     </>
   );
 });
