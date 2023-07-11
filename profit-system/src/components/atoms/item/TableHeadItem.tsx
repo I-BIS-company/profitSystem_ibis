@@ -5,7 +5,7 @@ type Props = {
   text: string;
 };
 
-export const TableHead: FC<Props> = (props) => {
+export const TableHeadItem: FC<Props> = (props) => {
   const { text } = props;
 
   return (

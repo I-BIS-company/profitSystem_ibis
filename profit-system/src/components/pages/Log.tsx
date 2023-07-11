@@ -2,18 +2,18 @@ import { Box } from "@chakra-ui/react";
 import { FC, memo } from "react";
 import { PrimaryButton } from "../atoms/button/PrimaryButton";
 import { HeadLine } from "../atoms/HeadLine";
-import { DateSearch } from "../atoms/searchs/dateSearch";
+import { DateSearchSelect } from "../atoms/box/DateSearchSelect";
 import { MainScreenTopContainer } from "../molecules/container/MainScreenTopContainer";
 import { LogDate } from "../atoms/LogDate";
 import { ContentBgTemplate } from "../molecules/container/ContentBgTemplate";
-import { LogTableTemplate } from "../molecules/tablelist/LogTableTemplate";
+import { LogTableTemplateList } from "../molecules/list/LogTableTemplateList";
 
 export const Log: FC = memo(() => {
   return (
     <>
       <HeadLine text="ログ" />
       <MainScreenTopContainer>
-        <DateSearch />
+        <DateSearchSelect />
         <Box>
           <PrimaryButton text="工数を登録する" />
         </Box>
@@ -21,13 +21,13 @@ export const Log: FC = memo(() => {
       <Box>
         <LogDate date="2023/6/2" />
         <ContentBgTemplate>
-          <LogTableTemplate />
+          <LogTableTemplateList />
         </ContentBgTemplate>
       </Box>
       <Box>
         <LogDate date="2023/6/1" />
         <ContentBgTemplate>
-          <LogTableTemplate />
+          <LogTableTemplateList />
         </ContentBgTemplate>
       </Box>
     </>

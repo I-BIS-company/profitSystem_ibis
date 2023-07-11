@@ -1,7 +1,7 @@
 import { Box, Select } from "@chakra-ui/react";
 import { FC } from "react";
 
-export const DateSearch: FC = () => {
+export const DateSearchSelect: FC = () => {
   return (
     <>
       <Box>

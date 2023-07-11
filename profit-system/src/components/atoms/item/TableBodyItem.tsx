@@ -5,7 +5,7 @@ type Props = {
   text: string;
 };
 
-export const TableBody: FC<Props> = (props) => {
+export const TableBodyItem: FC<Props> = (props) => {
   const { text } = props;
 
   return (

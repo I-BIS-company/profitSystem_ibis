@@ -2,7 +2,7 @@ import { Box } from "@chakra-ui/react";
 import { memo, FC } from "react";
 import { HeadLine } from "../atoms/HeadLine";
 import { MainScreenTopContainer } from "../molecules/container/MainScreenTopContainer";
-import { DateSearch } from "../atoms/searchs/dateSearch";
+import { DateSearchSelect } from "../atoms/box/DateSearchSelect";
 import { PrimaryButton } from "../atoms/button/PrimaryButton";
 import { ContentBgTemplate } from "../molecules/container/ContentBgTemplate";
 
@@ -12,7 +12,7 @@ export const ProjectsList: FC = memo(() => {
       <HeadLine text="案件一覧" />
 
       <MainScreenTopContainer>
-        <DateSearch />
+        <DateSearchSelect />
         <Box>
           <PrimaryButton text="案件を登録する" />
         </Box>
