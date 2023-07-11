@@ -10,6 +10,7 @@ import { HeadLine } from "../atoms/HeadLine";
 import { MainScreenTopContainer } from "../molecules/container/MainScreenTopContainer";
 import { PrimaryButton } from "../atoms/button/PrimaryButton";
 import { ContentBgTemplate } from "../molecules/container/ContentBgTemplate";
+import { Search2Icon } from "@chakra-ui/icons";
 
 export const ProjectsList: FC = memo(() => {
   return (
@@ -34,8 +35,10 @@ export const ProjectsList: FC = memo(() => {
                   borderBottomLeftRadius: "0",
                 }}
                 colorScheme="blue"
+                _hover={{ opacity: 0.8 }}
               >
                 検索
+                <Search2Icon boxSize="5" bg="blue.500" pl="2" />
               </Button>
             </InputRightElement>
           </InputGroup>
