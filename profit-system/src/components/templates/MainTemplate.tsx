@@ -15,7 +15,7 @@ export const MainTemplate: FC<Props> = memo((props) => {
       <Header />
       <Flex>
         <Sidebar />
-        <Box w="1024px">
+        <Box w="100%">
           <Box mr="10%" ml="10%" mt="5%">
             {children}
           </Box>
