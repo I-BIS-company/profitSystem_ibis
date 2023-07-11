@@ -27,8 +27,8 @@ jobs:
         env:
           cache-name: cache node_modules
         with:
-          path: 'profit-system/node_module'
-          key: ${{ matrix.os }}-node-v${{ matrix.node-version }}-deps-${{ hashFiles(format('{0}{1}', github.workspace, '/yarn.lock')) }}
+          path: 'profit-system/node_modules'
+          key: ${{ matrix.os }}-node-v${{ matrix.node-version }}-deps-${{ hashFiles(format('{0}{1}', github.workspace, 'profit-system/yarn.lock')) }}
       - name: ci
         if: steps.node_modules_cache_id.outputs.cache-hit != 'true'
         run: yarn --cwd profit-system install --immutable --immutable-cache --check-cache
