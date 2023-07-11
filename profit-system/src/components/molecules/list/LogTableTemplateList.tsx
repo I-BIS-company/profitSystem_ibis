@@ -1,26 +1,26 @@
-import { Box, Table, Tbody, Thead, Tr } from "@chakra-ui/react";
+import { Box, Table, TableContainer, Tbody, Thead, Tr } from "@chakra-ui/react";
 import { memo, FC } from "react";
-import { TableHead } from "../../atoms/tableitems/TableHead";
-import { TableBody } from "../../atoms/tableitems/TableBody";
+import { TableHeadItem } from "../../atoms/item/TableHeadItem";
+import { TableBodyItem } from "../../atoms/item/TableBodyItem";
 import { SecondaryButton } from "../../atoms/button/SecondaryButton";
 
-export const LogTableTemplate: FC = memo(() => {
+export const LogTableTemplateList: FC = memo(() => {
   return (
-    <>
+    <TableContainer>
       <Table variant="simple">
         <Thead>
           <Tr>
-            <TableHead text="担当者名" />
-            <TableHead text="担当案件" />
-            <TableHead text="時間(工数)" />
+            <TableHeadItem text="担当者名" />
+            <TableHeadItem text="担当案件" />
+            <TableHeadItem text="時間(工数)" />
           </Tr>
         </Thead>
 
         <Tbody alignItems="center">
           <Tr fontSize="14">
-            <TableBody text="ユーザ 太郎" />
-            <TableBody text="xxxxシステム開発" />
-            <TableBody text="10時間" />
+            <TableBodyItem text="ユーザ 太郎" />
+            <TableBodyItem text="xxxxシステム開発" />
+            <TableBodyItem text="10時間" />
 
             <Box
               display="flex"
@@ -32,9 +32,9 @@ export const LogTableTemplate: FC = memo(() => {
             </Box>
           </Tr>
           <Tr fontSize="14">
-            <TableBody text="ユーザ 太郎" />
-            <TableBody text="xxxxシステム開発" />
-            <TableBody text="10時間" />
+            <TableBodyItem text="ユーザ 太郎" />
+            <TableBodyItem text="xxxxシステム開発" />
+            <TableBodyItem text="10時間" />
 
             <Box
               display="flex"
@@ -47,6 +47,6 @@ export const LogTableTemplate: FC = memo(() => {
           </Tr>
         </Tbody>
       </Table>
-    </>
+    </TableContainer>
   );
 });
