@@ -4,7 +4,7 @@ import { HeadLine } from "../atoms/HeadLine";
 import { MainScreenTopContainer } from "../molecules/container/MainScreenTopContainer";
 import { PrimaryButton } from "../atoms/button/PrimaryButton";
 import { ContentBgTemplate } from "../molecules/container/ContentBgTemplateContainer";
-import { PrimarySearchButton } from "../atoms/box/PrimarySearchButton";
+import { PrimarySearchButton } from "../atoms/button/PrimarySearchButton";
 
 export const ProjectsList: FC = memo(() => {
   return (
