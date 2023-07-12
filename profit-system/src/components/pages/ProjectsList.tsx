@@ -20,9 +20,7 @@ export const ProjectsList: FC = memo(() => {
       </MainScreenTopContainer>
 
       <ContentBgTemplate>
-        <ContentBgTemplate>
-          <ProjectTableTemplateList />
-        </ContentBgTemplate>
+        <ProjectTableTemplateList />
       </ContentBgTemplate>
     </>
   );

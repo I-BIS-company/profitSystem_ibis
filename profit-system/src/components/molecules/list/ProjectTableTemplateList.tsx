@@ -10,7 +10,7 @@ export const ProjectTableTemplateList: FC = memo(() => {
       <Table variant="simple">
         <Thead>
           <Tr>
-            <TableHeadItem text="案件名" />
+            <TableHeadItem width="30%" text="案件名" />
             <TableHeadItem text="案件金額" />
           </Tr>
         </Thead>
