@@ -1,7 +1,17 @@
 import { Divider, Flex, FormLabel, Select } from "@chakra-ui/react";
-import { FC, memo } from "react";
+import { ChangeEvent, FC, memo, useState } from "react";
 
-export const WorkhourFormSelect: FC = memo(() => {
+type Props = {
+  value?: string;
+};
+
+export const WorkhourFormSelect: FC<Props> = memo((props) => {
+  const { value } = props;
+  const [hour, setHour] = useState(value);
+
+  const onChangeHour = (e: ChangeEvent<HTMLSelectElement>) =>
+    setHour(e.target.value);
+
   return (
     <>
       <Flex
@@ -22,6 +32,8 @@ export const WorkhourFormSelect: FC = memo(() => {
         w="75%"
         borderRadius="20px"
         placeholder="作業時間を選択する"
+        value={hour}
+        onChange={onChangeHour}
       >
         <option value="0.25">0.25</option>
         <option value="0.5">0.5</option>

@@ -4,8 +4,8 @@ import { SecondaryButton } from "../atoms/button/SecondaryButton";
 import { PrimaryButton } from "../atoms/button/PrimaryButton";
 import { MainContentContainer } from "../molecules/container/MainContentContainer";
 import { WorkhourFormContainer } from "../molecules/container/WorkhourContainer";
-import { ProjectFormSelect } from "../molecules/select/ProjectSelect";
-import { WorkhourFormSelect } from "../molecules/select/WorkhourSelect";
+import { ProjectFormSelect } from "../molecules/select/ProjectFormSelect";
+import { WorkhourFormSelect } from "../molecules/select/WorkhourFormSelect";
 
 export const WorkhourRegisterForm: FC = memo(() => {
   return (
