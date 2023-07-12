@@ -3,8 +3,11 @@ import { memo, FC } from "react";
 import { SbItemsContainer } from "../molecules/container/SbItemsContainer";
 import { SbMainItem } from "../atoms/item/SbMainItem";
 import { SbSubItem } from "../atoms/item/SbSubItem";
+import { useLocation } from "react-router-dom";
 
 export const Sidebar: FC = memo(() => {
+  const location = useLocation();
+
   return (
     <Flex
       direction="column"

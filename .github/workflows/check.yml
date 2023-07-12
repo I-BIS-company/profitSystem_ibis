@@ -8,7 +8,11 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        node-version: [18]
     steps:
       - name: checkout
         uses: actions/checkout@v3
@@ -16,8 +20,17 @@ jobs:
       - name: set up node
         uses: actions/setup-node@v3
         with:
-          node-version: "18"
+          node-version: ${{matrix.node-version}}
+      - name: cache-node-modules
+        uses: actions/cache@v3
+        id: node_modules_cache_id
+        env:
+          cache-name: cache node_modules
+        with:
+          path: 'profit-system/node_modules'
+          key: ${{ matrix.os }}-node-v${{ matrix.node-version }}-deps-${{ hashFiles('profit-system/yarn.lock') }}
       - name: ci
+        if: steps.node_modules_cache_id.outputs.cache-hit != 'true'
         run: yarn --cwd profit-system install --immutable --immutable-cache --check-cache
 
       - name: build
