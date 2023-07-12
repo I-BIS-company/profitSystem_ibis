@@ -15,7 +15,7 @@ export const MainContentContainer: FC<Props> = memo((props) => {
       h="550px"
       shadow="md"
       flexWrap="wrap"
-      py="50px"
+      py="75px"
     >
       {children}
     </Flex>

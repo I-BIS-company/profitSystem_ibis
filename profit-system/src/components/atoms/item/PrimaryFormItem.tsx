@@ -10,7 +10,13 @@ export const PrimaryFormItem: FC<Props> = memo((props) => {
 
   return (
     <>
-      <FormLabel mt="5px" fontSize="lg" w="15%">
+      <FormLabel
+        mt="5px"
+        fontSize="lg"
+        w="15%"
+        fontWeight="semibold"
+        color="blackAlpha.800"
+      >
         {text}
       </FormLabel>
       <Flex>

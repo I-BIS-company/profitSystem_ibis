@@ -11,7 +11,13 @@ const PostIcon = createIcon({
 export const PostNumFormItem: FC = memo(() => {
   return (
     <>
-      <FormLabel mt="5px" fontSize="lg" w="15%">
+      <FormLabel
+        mt="5px"
+        fontSize="lg"
+        w="15%"
+        fontWeight="semibold"
+        color="blackAlpha.800"
+      >
         郵便番号
       </FormLabel>
       <Flex alignItems="center">
