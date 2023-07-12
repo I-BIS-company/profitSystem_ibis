@@ -8,19 +8,12 @@ import { FormButtonContainer } from "../molecules/container/FormButtonContainer"
 import { SecondaryButton } from "../atoms/button/SecondaryButton";
 import { PrimaryButton } from "../atoms/button/PrimaryButton";
 import { FormDivider } from "../atoms/FormDivider";
+import { MainContentContainer } from "../molecules/container/MainContentContainer";
 
 export const CompanyForm: FC = memo(() => {
   return (
     <FormControl>
-      <Flex
-        bgColor="white"
-        borderRadius="5px"
-        w="80%"
-        h="550px"
-        shadow="md"
-        flexWrap="wrap"
-        py="50px"
-      >
+      <MainContentContainer>
         <FormItemContainer>
           <PrimaryFormItem text="顧客名" />
         </FormItemContainer>
@@ -41,7 +34,7 @@ export const CompanyForm: FC = memo(() => {
           <SecondaryButton text="一覧に戻る" size="md" />
           <PrimaryButton text="登録" size="md" />
         </FormButtonContainer>
-      </Flex>
+      </MainContentContainer>
     </FormControl>
   );
 });
