@@ -9,10 +9,8 @@ export const MainScreenTopContainer: FC<Props> = memo((props) => {
   const { children } = props;
 
   return (
-    <>
-      <Flex justifyContent="space-between" w="100%" mb="14">
-        {children}
-      </Flex>
-    </>
+    <Flex justifyContent="space-between" w="100%" mb="14">
+      {children}
+    </Flex>
   );
 });

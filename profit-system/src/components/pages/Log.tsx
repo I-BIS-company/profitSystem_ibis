@@ -2,10 +2,10 @@ import { Box } from "@chakra-ui/react";
 import { FC, memo } from "react";
 import { PrimaryButton } from "../atoms/button/PrimaryButton";
 import { HeadLine } from "../atoms/HeadLine";
-import { DateSearchSelect } from "../atoms/box/DateSearchSelect";
+import { DateSearchSelect } from "../atoms/box/DateSearchBox";
 import { MainScreenTopContainer } from "../molecules/container/MainScreenTopContainer";
 import { LogDate } from "../atoms/LogDate";
-import { ContentBgTemplate } from "../molecules/container/ContentBgTemplate";
+import { ContentBgTemplate } from "../molecules/container/ContentBgTemplateContainer";
 import { LogTableTemplateList } from "../molecules/list/LogTableTemplateList";
 
 export const Log: FC = memo(() => {
