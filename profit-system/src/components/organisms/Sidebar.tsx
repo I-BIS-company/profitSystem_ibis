@@ -18,20 +18,40 @@ export const Sidebar: FC = memo(() => {
       fontWeight="600"
     >
       <SbItemsContainer>
-        <SbMainItem text="ログ一覧" path="/log" />
-        <SbSubItem text="工数登録" path="/log/workhour_register" />
+        <SbMainItem text="ログ一覧" path="/log" location={location} />
+        <SbSubItem
+          text="工数登録"
+          path="/log/workhour_register"
+          location={location}
+        />
       </SbItemsContainer>
       <SbItemsContainer>
-        <SbMainItem text="ユーザ一覧" path="/users_list" />
+        <SbMainItem text="ユーザ一覧" path="/users_list" location={location} />
       </SbItemsContainer>
       <SbItemsContainer>
-        <SbMainItem text="顧客一覧" path="/companies_list" />
-        <SbSubItem text="顧客登録" path="/companies_list/company_register" />
+        <SbMainItem
+          text="顧客一覧"
+          path="/companies_list"
+          location={location}
+        />
+        <SbSubItem
+          text="顧客登録"
+          path="/companies_list/company_register"
+          location={location}
+        />
       </SbItemsContainer>
       <SbItemsContainer>
-        <SbMainItem text="案件一覧" path="/projects_list" />
-        <SbSubItem text="案件登録" path="/projects_list/project_register" />
-        <SbSubItem text="利益一覧" path="/projects_list/profits_list" />
+        <SbMainItem text="案件一覧" path="/projects_list" location={location} />
+        <SbSubItem
+          text="案件登録"
+          path="/projects_list/project_register"
+          location={location}
+        />
+        <SbSubItem
+          text="利益一覧"
+          path="/projects_list/profits_list"
+          location={location}
+        />
       </SbItemsContainer>
     </Flex>
   );
