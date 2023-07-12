@@ -2,9 +2,10 @@ import { Box } from "@chakra-ui/react";
 import { memo, FC } from "react";
 import { HeadLine } from "../atoms/HeadLine";
 import { MainScreenTopContainer } from "../molecules/container/MainScreenTopContainer";
+import { DateSearchSelect } from "../atoms/box/DateSearchBox";
 import { PrimaryButton } from "../atoms/button/PrimaryButton";
-import { ContentBgTemplate } from "../molecules/container/ContentBgTemplate";
-import { PrimarySearchButton } from "../atoms/box/PrimarySearchButton";
+import { ContentBgTemplate } from "../molecules/container/ContentBgTemplateContainer";
+
 
 export const ProjectsList: FC = memo(() => {
   return (
