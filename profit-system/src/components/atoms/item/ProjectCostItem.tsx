@@ -10,26 +10,29 @@ export const ProjectCostItem: FC<Props> = memo((props) => {
 
   return (
     <>
-      <FormLabel
-        mt="5px"
-        fontSize="lg"
-        w="15%"
-        fontWeight="semibold"
-        color="blackAlpha.800"
+      <Flex
+        w="70%"
+        ml="40px"
+        justifyContent="space-around"
+        alignItems="center"
+        borderBottom="1px solid"
+        borderBottomColor="blackAlpha.400"
       >
-        {text}
-      </FormLabel>
-      <Flex>
-        <Input w="400px" position="relative" />
-        <Box
-          position="absolute"
-          top="50%"
-          right="49%"
-          color="gray.500"
-          transform="translateY(-50%)"
-        >
-          円
-        </Box>
+        <FormLabel mt="5px" fontSize="lg" w="15%" color="blackAlpha.800">
+          {text}
+        </FormLabel>
+        <Flex>
+          <Input w="400px" position="relative" />
+          <Box
+            position="absolute"
+            top="50%"
+            right="49%"
+            color="gray.500"
+            transform="translateY(-50%)"
+          >
+            円
+          </Box>
+        </Flex>
       </Flex>
     </>
   );
