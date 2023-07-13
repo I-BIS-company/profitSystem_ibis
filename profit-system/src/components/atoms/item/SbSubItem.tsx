@@ -16,19 +16,17 @@ export const SbSubItem: FC<Props> = memo((props) => {
   const matchPath = findPath === 0;
 
   return (
-    <>
-      <Link
-        href={path}
-        mt="10px"
-        _hover={{ textDecoration: "none" }}
-        bgColor={matchPath ? "blue.500" : ""}
-        borderRadius={matchPath ? "10px" : ""}
-        color={matchPath ? "white" : ""}
-        px="15px"
-      >
-        <EditIcon mr="8px" />
-        {text}
-      </Link>
-    </>
+    <Link
+      href={path}
+      mt="10px"
+      _hover={{ textDecoration: "none" }}
+      bgColor={matchPath ? "blue.500" : ""}
+      borderRadius={matchPath ? "10px" : ""}
+      color={matchPath ? "white" : ""}
+      px="15px"
+    >
+      <EditIcon mr="8px" />
+      {text}
+    </Link>
   );
 });
