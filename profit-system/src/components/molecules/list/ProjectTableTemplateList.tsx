@@ -3,7 +3,7 @@ import { memo, FC } from "react";
 import { TableHeadItem } from "../../atoms/item/TableHeadItem";
 import { TableBodyItem } from "../../atoms/item/TableBodyItem";
 import { SecondaryButton } from "../../atoms/button/SecondaryButton";
-import { TableBodyLastItem } from "../../atoms/item/TableBodyLastItem";
+import { EditItem } from "../../atoms/item/EditItem";
 
 export const ProjectTableTemplateList: FC = memo(() => {
   return (
@@ -19,7 +19,8 @@ export const ProjectTableTemplateList: FC = memo(() => {
         <Tbody alignItems="center">
           <Tr fontSize="14">
             <TableBodyItem text="xxxx向けシステム開発" />
-            <TableBodyLastItem text="1,000,000円">
+            <TableBodyItem text="1,000,000円" />
+            <EditItem>
               <Box
                 display="flex"
                 justifyContent="center"
@@ -28,11 +29,12 @@ export const ProjectTableTemplateList: FC = memo(() => {
               >
                 <SecondaryButton text="編集" size="sm" />
               </Box>
-            </TableBodyLastItem>
+            </EditItem>
           </Tr>
           <Tr fontSize="14">
             <TableBodyItem text="xxxx向けシステム開発" />
-            <TableBodyLastItem text="2,000,000円">
+            <TableBodyItem text="2,000,000円" />
+            <EditItem>
               <Box
                 display="flex"
                 justifyContent="center"
@@ -41,7 +43,7 @@ export const ProjectTableTemplateList: FC = memo(() => {
               >
                 <SecondaryButton text="編集" size="sm" />
               </Box>
-            </TableBodyLastItem>
+            </EditItem>
           </Tr>
         </Tbody>
       </Table>

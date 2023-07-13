@@ -3,7 +3,7 @@ import { memo, FC } from "react";
 import { TableHeadItem } from "../../atoms/item/TableHeadItem";
 import { TableBodyItem } from "../../atoms/item/TableBodyItem";
 import { SecondaryButton } from "../../atoms/button/SecondaryButton";
-import { TableBodyLastItem } from "../../atoms/item/TableBodyLastItem";
+import { EditItem } from "../../atoms/item/EditItem";
 
 export const LogTableTemplateList: FC = memo(() => {
   return (
@@ -21,7 +21,8 @@ export const LogTableTemplateList: FC = memo(() => {
           <Tr fontSize="14">
             <TableBodyItem text="ユーザ 太郎" />
             <TableBodyItem text="xxxxシステム開発" />
-            <TableBodyLastItem text="10時間">
+            <TableBodyItem text="10時間" />
+            <EditItem>
               <Box
                 display="flex"
                 justifyContent="center"
@@ -30,12 +31,13 @@ export const LogTableTemplateList: FC = memo(() => {
               >
                 <SecondaryButton text="編集" size="sm" />
               </Box>
-            </TableBodyLastItem>
+            </EditItem>
           </Tr>
           <Tr fontSize="14">
             <TableBodyItem text="ユーザ 太郎" />
             <TableBodyItem text="xxxxシステム開発" />
-            <TableBodyLastItem text="10時間">
+            <TableBodyItem text="5時間" />
+            <EditItem>
               <Box
                 display="flex"
                 justifyContent="center"
@@ -44,7 +46,7 @@ export const LogTableTemplateList: FC = memo(() => {
               >
                 <SecondaryButton text="編集" size="sm" />
               </Box>
-            </TableBodyLastItem>
+            </EditItem>
           </Tr>
         </Tbody>
       </Table>
