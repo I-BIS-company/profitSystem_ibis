@@ -10,7 +10,14 @@ const PostIcon = createIcon({
 
 export const PostNumFormItem: FC = memo(() => {
   return (
-    <>
+    <Flex
+      w="70%"
+      ml="40px"
+      justifyContent="space-around"
+      alignItems="center"
+      borderBottom="1px solid"
+      borderBottomColor="blackAlpha.400"
+    >
       <FormLabel mt="5px" fontSize="lg" w="15%">
         郵便番号
       </FormLabel>
@@ -20,6 +27,6 @@ export const PostNumFormItem: FC = memo(() => {
         <Text fontSize="2xl">-</Text>
         <Input mx="18px" w="150px" />
       </Flex>
-    </>
+    </Flex>
   );
 });
