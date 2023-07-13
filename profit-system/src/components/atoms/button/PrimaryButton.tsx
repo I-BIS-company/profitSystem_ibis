@@ -3,15 +3,16 @@ import { FC, memo } from "react";
 
 type Props = {
   text: string;
+  size?: string;
 };
 
 export const PrimaryButton: FC<Props> = memo((props) => {
-  const { text } = props;
+  const { text, size } = props;
   return (
     <Button
       bg="green.400"
       color="white"
-      size="lg"
+      size={size}
       py={2}
       px={16}
       shadow="md"
