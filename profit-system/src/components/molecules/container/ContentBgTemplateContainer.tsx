@@ -2,7 +2,7 @@ import { Box } from "@chakra-ui/react";
 import { memo, FC, ReactNode } from "react";
 
 type Props = {
-  children: ReactNode;
+  childrennnnnn: ReactNode;
 };
 
 export const ContentBgTemplate: FC<Props> = memo((props) => {
