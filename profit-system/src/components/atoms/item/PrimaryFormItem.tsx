@@ -1,4 +1,4 @@
-import { Flex, FormLabel, Input } from "@chakra-ui/react";
+import { Box, Flex, FormLabel, Input } from "@chakra-ui/react";
 import { memo, FC } from "react";
 
 type Props = {
@@ -20,7 +20,16 @@ export const PrimaryFormItem: FC<Props> = memo((props) => {
         {text}
       </FormLabel>
       <Flex>
-        <Input w="400px" />
+        <Input w="400px" position="relative" />
+        <Box
+          position="absolute"
+          top="50%"
+          right="49%"
+          color="gray.500"
+          transform="translateY(-50%)"
+        >
+          円
+        </Box>
       </Flex>
     </>
   );
