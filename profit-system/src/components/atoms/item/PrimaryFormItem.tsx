@@ -1,4 +1,4 @@
-import { Box, Flex, FormLabel, Input } from "@chakra-ui/react";
+import { Flex, FormLabel, Input } from "@chakra-ui/react";
 import { memo, FC } from "react";
 
 type Props = {

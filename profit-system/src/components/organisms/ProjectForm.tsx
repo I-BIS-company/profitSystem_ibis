@@ -7,7 +7,7 @@ import { SecondaryButton } from "../atoms/button/SecondaryButton";
 import { PrimaryButton } from "../atoms/button/PrimaryButton";
 import { FormDivider } from "../atoms/FormDivider";
 import { MainContentContainer } from "../molecules/container/MainContentContainer";
-import { ProjectCostItem } from "../atoms/item/ProjectcostItem";
+import { ProjectCostItem } from "../atoms/item/ProjectCostItem";
 
 export const ProjectForm: FC = memo(() => {
   return (
