@@ -13,7 +13,7 @@ export const LogTableTemplateList: FC = memo(() => {
           <Tr>
             <TableHeadItem text="担当者名" />
             <TableHeadItem text="担当案件" />
-            <TableHeadItem text="時間(工数)" noBorder={true} />
+            <TableHeadItem text="時間(工数)" />
           </Tr>
         </Thead>
 

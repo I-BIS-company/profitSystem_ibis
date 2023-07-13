@@ -5,21 +5,24 @@ import { TableBodyItem } from "../../atoms/item/TableBodyItem";
 import { SecondaryButton } from "../../atoms/button/SecondaryButton";
 import { EditItem } from "../../atoms/item/EditItem";
 
-export const ProjectTableTemplateList: FC = memo(() => {
+export const CompaniesTableTemplateList: FC = memo(() => {
   return (
     <TableContainer>
-      <Table variant="simple">
+      <Table variant="simple" border="none">
         <Thead>
           <Tr>
-            <TableHeadItem width="30%" text="案件名" />
-            <TableHeadItem text="案件金額" />
+            <TableHeadItem text="顧客名" />
+            <TableHeadItem text="郵便番号" />
+            <TableHeadItem text="住所" />
+            <TableHeadItem text="電話番号" />
           </Tr>
         </Thead>
-
         <Tbody alignItems="center">
           <Tr fontSize="14">
-            <TableBodyItem text="xxxx向けシステム開発" />
-            <TableBodyItem text="1,000,000円" />
+            <TableBodyItem text="株式会社A" />
+            <TableBodyItem text="611-0000" />
+            <TableBodyItem text="東京都葛飾区〇〇町3丁目23-55" />
+            <TableBodyItem text="03-0000-0000" />
             <EditItem>
               <Box
                 display="flex"
@@ -32,8 +35,10 @@ export const ProjectTableTemplateList: FC = memo(() => {
             </EditItem>
           </Tr>
           <Tr fontSize="14">
-            <TableBodyItem text="xxxx向けシステム開発" />
-            <TableBodyItem text="2,000,000円" />
+            <TableBodyItem text="株式会社B" />
+            <TableBodyItem text="611-0000" />
+            <TableBodyItem text="東京都品川区〇〇町5丁目23-69" />
+            <TableBodyItem text="03-0000-0000" />
             <EditItem>
               <Box
                 display="flex"
