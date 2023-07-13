@@ -3,7 +3,7 @@ import { FC, memo } from "react";
 
 type Props = {
   text: string;
-  size: string;
+  size?: string;
 };
 
 export const PrimaryButton: FC<Props> = memo((props) => {
