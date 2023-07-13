@@ -1,13 +1,14 @@
 import { Td } from "@chakra-ui/react";
-import { FC } from "react";
+import { FC, ReactNode } from "react";
 
 type Props = {
   text: string;
   noBorder?: boolean;
+  children?: ReactNode;
 };
 
-export const TableBodyItem: FC<Props> = (props) => {
-  const { text, noBorder } = props;
+export const TableBodyLastItem: FC<Props> = (props) => {
+  const { text, noBorder, children } = props;
   const borderRightColor = noBorder ? "transparent" : "blackAlpha.200";
 
   return (
@@ -15,8 +16,13 @@ export const TableBodyItem: FC<Props> = (props) => {
       borderRight="1px solid"
       border="none"
       borderRightColor={borderRightColor}
+      display="flex"
+      justifyContent="space-between"
+      alignItems="center"
+      pr="100px"
     >
       {text}
+      {children}
     </Td>
   );
 };

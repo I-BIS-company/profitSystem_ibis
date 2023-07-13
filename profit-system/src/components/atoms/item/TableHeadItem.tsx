@@ -15,7 +15,7 @@ export const TableHeadItem: FC<Props> = (props) => {
     <Th
       color="blue.500"
       fontSize="16"
-      borderRight="1px solid"
+      border="none"
       borderRightColor={borderRightColor}
       w={width}
     >
