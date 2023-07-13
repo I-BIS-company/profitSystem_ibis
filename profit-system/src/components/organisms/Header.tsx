@@ -3,10 +3,8 @@ import { memo, FC } from "react";
 
 import { UserName } from "../atoms/UserName";
 
-
 export const Header: FC = memo(() => {
   return (
-    <>
     <Flex
       width="100%"
       height="50px"
@@ -20,14 +18,9 @@ export const Header: FC = memo(() => {
       <Text>アイビス株式会社</Text>
 
       {/* 右側の要素 */}
-      <Flex
-        w={140}
-        justifyContent="space-between"
-        alignItems="center"
-      >
-      <UserName />
+      <Flex w={140} justifyContent="space-between" alignItems="center">
+        <UserName />
       </Flex>
     </Flex>
-    </>
   );
 });

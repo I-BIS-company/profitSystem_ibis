@@ -5,11 +5,11 @@ type Props = {
   children: ReactNode;
 };
 
-export const SbItemsContainer: FC<Props> = memo((props) => {
+export const MainScreenTopContainer: FC<Props> = memo((props) => {
   const { children } = props;
 
   return (
-    <Flex direction="column" alignItems="center" mt="10px" mb="50px">
+    <Flex justifyContent="space-between" w="100%" mb="14">
       {children}
     </Flex>
   );
