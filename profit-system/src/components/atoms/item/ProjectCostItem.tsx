@@ -5,7 +5,7 @@ type Props = {
   text: string;
 };
 
-export const PrimaryFormItem: FC<Props> = memo((props) => {
+export const ProjectCostItem: FC<Props> = memo((props) => {
   const { text } = props;
 
   return (
@@ -20,7 +20,16 @@ export const PrimaryFormItem: FC<Props> = memo((props) => {
         {text}
       </FormLabel>
       <Flex>
-        <Input w="400px" />
+        <Input w="400px" position="relative" />
+        <Box
+          position="absolute"
+          top="50%"
+          right="49%"
+          color="gray.500"
+          transform="translateY(-50%)"
+        >
+          円
+        </Box>
       </Flex>
     </>
   );

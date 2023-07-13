@@ -7,6 +7,7 @@ import { SecondaryButton } from "../atoms/button/SecondaryButton";
 import { PrimaryButton } from "../atoms/button/PrimaryButton";
 import { FormDivider } from "../atoms/FormDivider";
 import { MainContentContainer } from "../molecules/container/MainContentContainer";
+import { ProjectCostItem } from "../atoms/item/ProjectcostItem";
 
 export const ProjectForm: FC = memo(() => {
   return (
@@ -17,7 +18,7 @@ export const ProjectForm: FC = memo(() => {
         </FormItemContainer>
         <FormDivider />
         <FormItemContainer>
-          <PrimaryFormItem text="案件金額" />
+          <ProjectCostItem text="案件金額" />
         </FormItemContainer>
         <FormDivider />
         <FormButtonContainer>
