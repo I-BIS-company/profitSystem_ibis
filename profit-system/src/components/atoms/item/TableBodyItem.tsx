@@ -3,19 +3,13 @@ import { FC } from "react";
 
 type Props = {
   text: string;
-  noBorder?: boolean;
 };
 
 export const TableBodyItem: FC<Props> = (props) => {
-  const { text, noBorder } = props;
-  const borderRightColor = noBorder ? "transparent" : "blackAlpha.200";
+  const { text } = props;
 
   return (
-    <Td
-      borderRight="1px solid"
-      border="none"
-      borderRightColor={borderRightColor}
-    >
+    <Td borderRight="1px solid" border="none">
       {text}
     </Td>
   );
