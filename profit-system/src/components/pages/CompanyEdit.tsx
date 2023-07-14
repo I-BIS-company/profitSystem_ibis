@@ -1,5 +1,5 @@
 import { memo, FC } from "react";
-import { CompanyFormEdit } from "../organisms/CompanyFormEdit";
+import { CompanyFormEdit } from "../organisms/form/CompanyEditForm";
 import { HeadLine } from "../atoms/HeadLine";
 
 export const CompanyEdit: FC = memo(() => {
