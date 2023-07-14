@@ -1,2 +1,2 @@
 #!/bin/bash
-yarn --cwd profit-system
+yarn --cwd profit-system run dev
