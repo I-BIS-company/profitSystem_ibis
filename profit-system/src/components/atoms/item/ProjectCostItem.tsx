@@ -1,4 +1,4 @@
-import { Box, Flex, FormLabel, Input } from "@chakra-ui/react";
+import { Box, Flex, FormLabel, Input, Text } from "@chakra-ui/react";
 import { memo, FC } from "react";
 
 type Props = {
@@ -20,17 +20,9 @@ export const ProjectCostItem: FC<Props> = memo((props) => {
       <FormLabel mt="5px" fontSize="lg" w="15%" color="blackAlpha.800">
         {text}
       </FormLabel>
-      <Flex>
-        <Input w="400px" position="relative" />
-        <Box
-          position="absolute"
-          top="50%"
-          right="35%"
-          color="gray.500"
-          transform="translateY(-50%)"
-        >
-          円
-        </Box>
+      <Flex alignItems="center">
+        <Input w="400px" mr="8px" />
+        <Text color="gray.600">円</Text>
       </Flex>
     </Flex>
   );
