@@ -10,7 +10,7 @@ export const ProjectCostItem: FC<Props> = memo((props) => {
 
   return (
     <Flex
-      minW="70%"
+      w="70%"
       ml="40px"
       justifyContent="space-around"
       alignItems="center"
@@ -25,7 +25,7 @@ export const ProjectCostItem: FC<Props> = memo((props) => {
         <Box
           position="absolute"
           top="50%"
-          right="49%"
+          right="35%"
           color="gray.500"
           transform="translateY(-50%)"
         >

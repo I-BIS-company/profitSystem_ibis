@@ -10,7 +10,7 @@ export const PrimaryFormItem: FC<Props> = memo((props) => {
 
   return (
     <Flex
-      minW="70%"
+      w="70%"
       ml="40px"
       justifyContent="space-around"
       alignItems="center"
