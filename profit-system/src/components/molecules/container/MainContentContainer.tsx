@@ -11,11 +11,11 @@ export const MainContentContainer: FC<Props> = memo((props) => {
     <Flex
       bgColor="white"
       borderRadius="5px"
-      w="80%"
+      minW="1000px"
       h="550px"
       shadow="md"
       flexWrap="wrap"
-      py="50px"
+      py="75px"
     >
       {children}
     </Flex>

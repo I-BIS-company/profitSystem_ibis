@@ -2,23 +2,15 @@ import { Th } from "@chakra-ui/react";
 import { FC } from "react";
 
 type Props = {
-  text: string;
+  text?: string;
   width?: string;
-  noBorder?: boolean;
 };
 
 export const TableHeadItem: FC<Props> = (props) => {
-  const { text, width, noBorder } = props;
-  const borderRightColor = noBorder ? "transparent" : "blackAlpha.200";
+  const { text, width } = props;
 
   return (
-    <Th
-      color="blue.500"
-      fontSize="16"
-      border="none"
-      borderRightColor={borderRightColor}
-      w={width}
-    >
+    <Th color="blue.500" fontSize="16" border="bottom" w={width} py="15px">
       {text}
     </Th>
   );

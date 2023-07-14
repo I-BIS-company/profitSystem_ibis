@@ -1,6 +1,6 @@
 import { Box, Heading } from "@chakra-ui/layout";
 import { memo, FC } from "react";
-import { CompanyForm } from "../organisms/CompanyForm";
+import { CompanyForm } from "../organisms/form/CompanyRegisterForm";
 
 export const CompanyRegister: FC = memo(() => {
   return (
