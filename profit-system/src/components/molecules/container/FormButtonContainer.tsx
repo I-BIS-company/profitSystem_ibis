@@ -10,8 +10,15 @@ type Props = {
 export const FormButtonContainer: FC<Props> = memo((props) => {
   const { secondaryPx } = props;
   return (
-    <Flex w="45%" justifyContent="center" alignItems="center" gap="50px">
-      <SecondaryButton text="一覧に戻る" px={secondaryPx} />
+    <Flex
+      minW="45%"
+      justifyContent="center"
+      alignItems="center"
+      gap="50px"
+      ml="50px"
+      px={secondaryPx}
+    >
+      <SecondaryButton text="一覧に戻る" />
       <PrimaryButton text="登録" />
     </Flex>
   );
