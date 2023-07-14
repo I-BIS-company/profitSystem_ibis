@@ -2,7 +2,7 @@ import { Th } from "@chakra-ui/react";
 import { FC } from "react";
 
 type Props = {
-  text: string;
+  text?: string;
   width?: string;
 };
 
