@@ -14,7 +14,7 @@ export const ProjectsList: FC = memo(() => {
       <MainScreenTopContainer>
         <PrimarySearchButton text="案件名" />
         <Box>
-          <PrimaryButton text="案件を登録する" />
+          <PrimaryButton text="案件を登録する" size="lg" />
         </Box>
       </MainScreenTopContainer>
       <ContentBgTemplate>
