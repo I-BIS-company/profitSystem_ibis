@@ -5,12 +5,19 @@ import { PrimaryButton } from "../../atoms/button/PrimaryButton";
 
 type Props = {
   secondaryPx?: string;
+  ml?: string;
 };
 
 export const FormButtonContainer: FC<Props> = memo((props) => {
-  const { secondaryPx } = props;
+  const { secondaryPx, ml } = props;
   return (
-    <Flex w="45%" justifyContent="center" alignItems="center" gap="50px">
+    <Flex
+      w="45%"
+      justifyContent="center"
+      alignItems="center"
+      gap="50px"
+      ml={ml}
+    >
       <SecondaryButton text="一覧に戻る" px={secondaryPx} />
       <PrimaryButton text="登録" />
     </Flex>

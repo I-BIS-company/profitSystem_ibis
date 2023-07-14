@@ -5,6 +5,7 @@ import { MainScreenTopContainer } from "../molecules/container/MainScreenTopCont
 import { PrimaryButton } from "../atoms/button/PrimaryButton";
 import { ContentBgTemplate } from "../molecules/container/ContentBgTemplateContainer";
 import { PrimarySearchButton } from "../atoms/button/PrimarySearchButton";
+import { ProjectTableTemplateList } from "../molecules/list/ProjectTableTemplateList";
 
 export const ProjectsList: FC = memo(() => {
   return (
@@ -19,7 +20,7 @@ export const ProjectsList: FC = memo(() => {
       </MainScreenTopContainer>
 
       <ContentBgTemplate>
-        <p>aaa</p>
+        <ProjectTableTemplateList />
       </ContentBgTemplate>
     </>
   );
