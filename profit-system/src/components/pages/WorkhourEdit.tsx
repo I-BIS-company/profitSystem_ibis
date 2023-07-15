@@ -1,5 +1,5 @@
 import { memo, FC } from "react";
-import { WorkhourEditForm } from "../organisms/WorkhourEditForm";
+import { WorkhourEditForm } from "../organisms/form/WorkhourEditForm";
 import { HeadLine } from "../atoms/HeadLine";
 
 export const WorkhourEdit: FC = memo(() => {
