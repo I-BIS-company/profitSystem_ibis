@@ -5,7 +5,7 @@ type Props = {
   value?: string;
 };
 
-export const WorkhourFormSelect: FC<Props> = memo((props) => {
+export const WorkhourForm: FC<Props> = memo((props) => {
   const { value } = props;
   const [hour, setHour] = useState(value);
 
