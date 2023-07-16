@@ -18,9 +18,9 @@ export const UserEditTable: FC = memo(() => {
       <Table variant="simple" border="1px" borderColor="blackAlpha.200">
         <Thead>
           <Tr>
-            <TableHeadItem text="ユーザ名" sideBorder={true} />
-            <TableHeadItem text="権限" sideBorder={true} />
-            <TableHeadItem text="作業コスト" sideBorder={true} />
+            <TableHeadItem text="ユーザ名" allBorder={true} />
+            <TableHeadItem text="権限" allBorder={true} />
+            <TableHeadItem text="作業コスト" allBorder={true} />
           </Tr>
         </Thead>
         <Tbody>
@@ -36,7 +36,13 @@ export const UserEditTable: FC = memo(() => {
           </Tr>
         </Tbody>
       </Table>
-      <FormButtonContainer gap="80px" h="130px" w="100%" secondaryPx="10" />
+      <FormButtonContainer
+        gap="80px"
+        h="130px"
+        w="100%"
+        secondaryPx="10"
+        primaryText="更新"
+      />
     </TableContainer>
   );
 });

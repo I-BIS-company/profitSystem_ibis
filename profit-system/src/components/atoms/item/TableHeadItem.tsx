@@ -4,17 +4,17 @@ import { FC } from "react";
 type Props = {
   text?: string;
   width?: string;
-  sideBorder?: boolean;
+  allBorder?: boolean;
 };
 
 export const TableHeadItem: FC<Props> = (props) => {
-  const { text, width, sideBorder } = props;
+  const { text, width, allBorder } = props;
 
   return (
     <Th
       color="blue.500"
       fontSize="16"
-      border={sideBorder ? "1px" : "none"}
+      border={allBorder ? "1px" : "none"}
       borderColor="blackAlpha.200"
       w={width}
       py="15px"
