@@ -65,7 +65,7 @@ export const ProfitsList: FC = memo(() => {
           </Flex>
 
           <Box textAlign="left" mx="auto">
-            <Flex justifyContent="space-between">
+            <Flex justifyContent="space-between" mx="50px">
               <Box>
                 <dt>
                   <Text
@@ -128,7 +128,7 @@ export const ProfitsList: FC = memo(() => {
             </Flex>
             <Divider my="4" />
 
-            <Flex justifyContent="space-between">
+            <Flex justifyContent="space-between" mx="50px">
               <Box>
                 <dt>
                   <Text
@@ -157,7 +157,7 @@ export const ProfitsList: FC = memo(() => {
                 </dd>
               </Box>
 
-              <Box>
+              <Box mr="19px">
                 <dt>
                   <Text
                     fontSize="16"
@@ -246,7 +246,7 @@ export const ProfitsList: FC = memo(() => {
           </Flex>
 
           <Box textAlign="left" mx="auto">
-            <Flex justifyContent="space-between">
+            <Flex justifyContent="space-between" mx="50px">
               <Box>
                 <dt>
                   <Text
@@ -309,7 +309,7 @@ export const ProfitsList: FC = memo(() => {
             </Flex>
             <Divider my="4" />
 
-            <Flex justifyContent="space-between">
+            <Flex justifyContent="space-between" mx="50px">
               <Box>
                 <dt>
                   <Text
@@ -338,7 +338,7 @@ export const ProfitsList: FC = memo(() => {
                 </dd>
               </Box>
 
-              <Box>
+              <Box mr="19px">
                 <dt>
                   <Text
                     fontSize="16"
