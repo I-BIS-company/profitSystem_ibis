@@ -6,7 +6,7 @@ import { PrimaryFormItem } from "../../molecules/item/PrimaryFormItem";
 import { PostNumFormItem } from "../../molecules/item/PostNumFormItem";
 import { PhoneFormItem } from "../../molecules/item/PhoneFormItem";
 
-export const CompanyFormEdit: FC = memo(() => {
+export const CompanyEditForm: FC = memo(() => {
   return (
     <FormControl>
       <MainContentContainer>
