@@ -15,7 +15,12 @@ import { FormButtonContainer } from "../molecules/container/FormButtonContainer"
 export const UserEditTable: FC = memo(() => {
   return (
     <TableContainer h="300px" p="50px">
-      <Table variant="simple" border="1px" borderColor="blackAlpha.200">
+      <Table
+        variant="simple"
+        border="1px"
+        borderColor="blackAlpha.200"
+        mb="40px"
+      >
         <Thead>
           <Tr>
             <TableHeadItem text="ユーザ名" allBorder={true} />
@@ -36,13 +41,7 @@ export const UserEditTable: FC = memo(() => {
           </Tr>
         </Tbody>
       </Table>
-      <FormButtonContainer
-        gap="80px"
-        h="130px"
-        w="100%"
-        secondaryPx="10"
-        primaryText="更新"
-      />
+      <FormButtonContainer w="100%" secondaryPx="10" primaryText="更新" />
     </TableContainer>
   );
 });
