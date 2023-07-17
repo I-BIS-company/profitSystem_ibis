@@ -25,7 +25,7 @@ export const TotalCostItem: FC<Props> = memo((props) => {
         >
           {value}
         </Text>
-        <Text fontSize="xs" display="inline-block">
+        <Text fontSize="xs" display="inline-block" color="blackAlpha.800">
           円
         </Text>
       </dd>
