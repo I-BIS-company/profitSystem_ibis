@@ -1,9 +1,9 @@
 import { FormControl } from "@chakra-ui/react";
 import { memo, FC } from "react";
-import { MainContentContainer } from "../molecules/container/MainContentContainer";
-import { ProjectForm } from "../molecules/form/ProjectForm";
-import { WorkhourForm } from "../molecules/form/WorkhourForm";
-import { FormButtonContainer } from "../molecules/container/FormButtonContainer";
+import { MainContentContainer } from "../../molecules/container/MainContentContainer";
+import { ProjectSelectForm } from "../../molecules/form/ProjectSelectForm";
+import { WorkhourSelectForm } from "../../molecules/form/WorkhourSelectForm";
+import { FormButtonContainer } from "../../molecules/container/FormButtonContainer";
 
 export const WorkhourRegisterForm: FC = memo(() => {
   return (
@@ -17,8 +17,8 @@ export const WorkhourRegisterForm: FC = memo(() => {
         flexDirection="column"
         display="flex"
       >
-        <ProjectForm />
-        <WorkhourForm />
+        <ProjectSelectForm />
+        <WorkhourSelectForm />
         <FormButtonContainer secondaryPx="16" />
       </FormControl>
     </MainContentContainer>
