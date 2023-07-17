@@ -5,7 +5,7 @@ type Props = {
   value?: string;
 };
 
-export const ProjectForm: FC<Props> = memo((props) => {
+export const ProjectSelectForm: FC<Props> = memo((props) => {
   const { value } = props;
   const [project, setProject] = useState(value);
 
