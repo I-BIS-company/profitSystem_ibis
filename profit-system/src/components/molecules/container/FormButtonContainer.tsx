@@ -12,13 +12,7 @@ type Props = {
 export const FormButtonContainer: FC<Props> = memo((props) => {
   const { secondaryPx, ml, primaryText = "登録" } = props;
   return (
-    <Flex
-      w="45%"
-      justifyContent="center"
-      alignItems="center"
-      gap="50px"
-      ml={ml}
-    >
+    <Flex justifyContent="center" alignItems="center" gap="50px" ml={ml}>
       <SecondaryButton text="一覧に戻る" px={secondaryPx} />
       <PrimaryButton text={primaryText} />
     </Flex>

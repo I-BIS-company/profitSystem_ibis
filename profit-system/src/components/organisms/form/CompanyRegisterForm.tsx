@@ -6,7 +6,7 @@ import { PhoneFormItem } from "../../molecules/item/PhoneFormItem";
 import { FormButtonContainer } from "../../molecules/container/FormButtonContainer";
 import { MainContentContainer } from "../../molecules/container/MainContentContainer";
 
-export const CompanyForm: FC = memo(() => {
+export const CompanyRegisterForm: FC = memo(() => {
   return (
     <FormControl>
       <MainContentContainer>
@@ -14,7 +14,7 @@ export const CompanyForm: FC = memo(() => {
         <PostNumFormItem />
         <PrimaryFormItem text="住所" />
         <PhoneFormItem />
-        <FormButtonContainer />
+        <FormButtonContainer secondaryPx="10" ml="50px" />
       </MainContentContainer>
     </FormControl>
   );
