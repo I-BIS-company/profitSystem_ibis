@@ -2,10 +2,10 @@ import { Box } from "@chakra-ui/react";
 import { memo, FC } from "react";
 import { HeadLine } from "../atoms/HeadLine";
 import { MainScreenTopContainer } from "../molecules/container/MainScreenTopContainer";
-import { PrimaryButton } from "../atoms/button/PrimaryButton";
 import { ContentBgTemplate } from "../molecules/container/ContentBgTemplateContainer";
 import { PrimarySearchButton } from "../atoms/button/PrimarySearchButton";
 import { CompaniesTableTemplateList } from "../molecules/list/CompaniesTableTemplateList";
+import { IconButton } from "../atoms/button/IconButton";
 
 export const CompaniesList: FC = memo(() => {
   return (
@@ -14,7 +14,7 @@ export const CompaniesList: FC = memo(() => {
       <MainScreenTopContainer>
         <PrimarySearchButton text="顧客名" />
         <Box>
-          <PrimaryButton text="顧客名を登録する" size="lg" />
+          <IconButton text="顧客名を登録する" />
         </Box>
       </MainScreenTopContainer>
       <ContentBgTemplate>
