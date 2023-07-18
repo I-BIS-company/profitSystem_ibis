@@ -10,7 +10,7 @@ type Props = {
 };
 
 export const PrimaryButton: FC<Props> = memo((props) => {
-  const { text, size, showIcon = false } = props;
+  const { text, size, showIcon } = props;
   return (
     <Button
       bg="green.400"
