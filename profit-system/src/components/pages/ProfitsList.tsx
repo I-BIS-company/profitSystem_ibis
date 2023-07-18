@@ -13,18 +13,20 @@ export const ProfitsList: FC = memo(() => {
         <ProfitCardContainer>
           <ProfitHeadlineItem text="A" />
           <Box textAlign="left" mx="auto">
-            <Flex justifyContent="space-between" mx="50px">
+            {/* <Flex justifyContent="space-between" mx="50px"> */}
+            <Flex flexShrink="1" justifyContent="space-between" mx="50px">
               <ProfitInfoItem pTitle="売上" pDescription="1,000,000" />
               <ProfitInfoItem pTitle="粗利益" pDescription="500,000" />
             </Flex>
             <Divider my="4" />
 
-            <Flex justifyContent="space-between" mx="50px">
+            <Flex flexShrink="1" justifyContent="space-between" mx="50px">
+              {/* <Flex justifyContent="space-between" mx="50px"> */}
               <ProfitInfoItem pTitle="コスト合計" pDescription="500,000" />
               <ProfitInfoItem
                 pTitle="稼働時間"
                 pDescription="200"
-                unit="時間"
+                // unit="時間"
               />
             </Flex>
           </Box>
@@ -33,18 +35,18 @@ export const ProfitsList: FC = memo(() => {
         <ProfitCardContainer>
           <ProfitHeadlineItem text="B" />
           <Box textAlign="left" mx="auto">
-            <Flex justifyContent="space-between" mx="50px">
+            <Flex flexShrink="1" justifyContent="space-between" mx="50px">
               <ProfitInfoItem pTitle="売上" pDescription="2,000,000" />
               <ProfitInfoItem pTitle="粗利益" pDescription="1,000,000" />
             </Flex>
             <Divider my="4" />
 
-            <Flex justifyContent="space-between" mx="50px">
+            <Flex flexShrink="1" justifyContent="space-between" mx="50px">
               <ProfitInfoItem pTitle="コスト合計" pDescription="1,000,000" />
               <ProfitInfoItem
                 pTitle="稼働時間"
                 pDescription="200"
-                unit="時間"
+                // unit="時間"
               />
             </Flex>
           </Box>
