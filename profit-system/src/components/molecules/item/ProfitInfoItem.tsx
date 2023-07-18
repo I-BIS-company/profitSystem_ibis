@@ -11,13 +11,12 @@ export const ProfitInfoItem: FC<Props> = memo((props) => {
   const { pTitle, pDescription, unit = "円" } = props;
 
   return (
-    <Box as="dl" textAlign="left">
-      <Box as="dt">
-        <Text fontSize="16" color="blue.800" fontWeight="bold" mr="2" pb="8px">
-          {pTitle}
-        </Text>
-      </Box>
-      <Box as="dd">
+    <Box w="50%" flexShrink="1" mx="30px">
+      <Text fontSize="16" color="blue.800" fontWeight="bold" mr="2" pb="8px">
+        {pTitle}
+      </Text>
+
+      <Box>
         <Text
           fontSize="18"
           display="inline-block"

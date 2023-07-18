@@ -38,7 +38,7 @@ export const ProfitHeadlineItem: FC<Props> = memo((props) => {
           />
           案件：
         </Text>
-        <Text position="relative" fontSize="18px">
+        <Text position="relative" fontSize="18px" w="180px" textAlign="left">
           {text}
           <Text
             _after={{
