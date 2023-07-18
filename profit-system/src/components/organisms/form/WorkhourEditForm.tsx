@@ -19,7 +19,7 @@ export const WorkhourEditForm: FC = memo(() => {
       >
         <ProjectSelectForm value="A向けシステム開発" />
         <WorkhourSelectForm value="5" />
-        <FormButtonContainer secondaryPx="16" />
+        <FormButtonContainer secondaryPx="10" />
       </FormControl>
     </MainContentContainer>
   );

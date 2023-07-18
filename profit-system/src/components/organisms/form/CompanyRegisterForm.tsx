@@ -14,7 +14,7 @@ export const CompanyRegisterForm: FC = memo(() => {
         <PostNumFormItem />
         <PrimaryFormItem text="住所" />
         <PhoneFormItem />
-        <FormButtonContainer />
+        <FormButtonContainer secondaryPx="10" ml="50px" />
       </MainContentContainer>
     </FormControl>
   );

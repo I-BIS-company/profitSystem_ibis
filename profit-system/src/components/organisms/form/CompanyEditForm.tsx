@@ -10,11 +10,11 @@ export const CompanyEditForm: FC = memo(() => {
   return (
     <FormControl>
       <MainContentContainer>
-        <PrimaryFormItem text="顧客名" />
-        <PostNumFormItem />
-        <PrimaryFormItem text="住所" />
-        <PhoneFormItem />
-        <FormButtonContainer primaryText="更新" />
+        <PrimaryFormItem text="顧客名" value="株式会社A" />
+        <PostNumFormItem value1="611" value2="0000" />
+        <PrimaryFormItem text="住所" value="東京都葛飾区立石町3丁目 23-55" />
+        <PhoneFormItem value1="030" value2="0000" value3="3333" />
+        <FormButtonContainer primaryText="更新" secondaryPx="10" ml="50px" />
       </MainContentContainer>
     </FormControl>
   );

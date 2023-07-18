@@ -41,7 +41,7 @@ export const UserEditTable: FC = memo(() => {
           </Tr>
         </Tbody>
       </Table>
-      <FormButtonContainer w="100%" secondaryPx="10" primaryText="更新" />
+      <FormButtonContainer secondaryPx="10" primaryText="更新" />
     </TableContainer>
   );
 });
