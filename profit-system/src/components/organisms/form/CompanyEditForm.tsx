@@ -14,7 +14,7 @@ export const CompanyEditForm: FC = memo(() => {
         <PostNumFormItem />
         <PrimaryFormItem text="住所" />
         <PhoneFormItem />
-        <FormButtonContainer />
+        <FormButtonContainer primaryText="更新" />
       </MainContentContainer>
     </FormControl>
   );
