@@ -4,15 +4,14 @@ import { memo, FC } from "react";
 type Props = {
   pTitle: string;
   pDescription: string;
-  // unit?: string;
+  unit?: string;
 };
 
 export const ProfitInfoItem: FC<Props> = memo((props) => {
   const { pTitle, pDescription, unit = "円" } = props;
-  const unitMargin = unit === "時間" ? "19px" : "0";
 
   return (
-    <Box as="dl" mr={unitMargin} textAlign="left">
+    <Box as="dl" textAlign="left">
       <Box as="dt">
         <Text fontSize="16" color="blue.800" fontWeight="bold" mr="2" pb="8px">
           {pTitle}
