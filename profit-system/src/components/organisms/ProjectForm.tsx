@@ -11,7 +11,7 @@ export const ProjectForm: FC = memo(() => {
       <MainContentContainer>
         <PrimaryFormItem text="案件名" />
         <ProjectCostItem text="案件金額" />
-        <FormButtonContainer ml="50px" />
+        <FormButtonContainer ml="50px" secondaryPx="16" />
       </MainContentContainer>
     </FormControl>
   );
