@@ -9,7 +9,7 @@ type Props = {
 
 export const ProfitInfoItem: FC<Props> = memo((props) => {
   const { pTitle, pDescription, unit = "円" } = props;
-  const unitMargin = unit === "時間" ? "19px" : "";
+  const unitMargin = unit === "時間" ? "19px" : "0";
 
   return (
     <Box as="dl" mr={unitMargin}>
