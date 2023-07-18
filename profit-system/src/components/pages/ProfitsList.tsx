@@ -2,10 +2,7 @@ import { memo, FC } from "react";
 import { HeadLine } from "../atoms/HeadLine";
 import { Box, Divider, Flex } from "@chakra-ui/react";
 import { ProfitHeadlineItem } from "../molecules/item/ProfitHeadlineItem";
-import { SalesItem } from "../molecules/item/SalesItem";
-import { GrossProfitItem } from "../molecules/item/GrossProfitItem";
-import { TotalCostItem } from "../molecules/item/TotalCostItem";
-import { WorkingHoursItem } from "../molecules/item/WorkingHoursItem";
+import { ProfitInfoItem } from "../molecules/item/ProfitInfoItem";
 import { ProfitCardContainer } from "../molecules/container/ProfitCardContainer";
 
 export const ProfitsList: FC = memo(() => {
@@ -17,14 +14,18 @@ export const ProfitsList: FC = memo(() => {
           <ProfitHeadlineItem text="A" />
           <Box textAlign="left" mx="auto">
             <Flex justifyContent="space-between" mx="50px">
-              <SalesItem value="1,000,000" />
-              <GrossProfitItem value="500,000" />
+              <ProfitInfoItem pTitle="売上" pDescription="1,000,000" />
+              <ProfitInfoItem pTitle="粗利益" pDescription="500,000" />
             </Flex>
             <Divider my="4" />
 
             <Flex justifyContent="space-between" mx="50px">
-              <TotalCostItem value="500,000" />
-              <WorkingHoursItem value={200} />
+              <ProfitInfoItem pTitle="コスト合計" pDescription="500,000" />
+              <ProfitInfoItem
+                pTitle="稼働時間"
+                pDescription="200"
+                unit="時間"
+              />
             </Flex>
           </Box>
         </ProfitCardContainer>
@@ -33,14 +34,18 @@ export const ProfitsList: FC = memo(() => {
           <ProfitHeadlineItem text="B" />
           <Box textAlign="left" mx="auto">
             <Flex justifyContent="space-between" mx="50px">
-              <SalesItem value="2,000,000" />
-              <GrossProfitItem value="1,000,000" />
+              <ProfitInfoItem pTitle="売上" pDescription="2,000,000" />
+              <ProfitInfoItem pTitle="粗利益" pDescription="1,000,000" />
             </Flex>
             <Divider my="4" />
 
             <Flex justifyContent="space-between" mx="50px">
-              <TotalCostItem value="1,000,000" />
-              <WorkingHoursItem value={200} />
+              <ProfitInfoItem pTitle="コスト合計" pDescription="1,000,000" />
+              <ProfitInfoItem
+                pTitle="稼働時間"
+                pDescription="200"
+                unit="時間"
+              />
             </Flex>
           </Box>
         </ProfitCardContainer>
