@@ -11,14 +11,12 @@ export const ProjectsList: FC = memo(() => {
   return (
     <>
       <HeadLine text="案件一覧" />
-
       <MainScreenTopContainer>
         <PrimarySearchButton text="案件名" />
         <Box>
           <PrimaryButton text="案件を登録する" size="lg" showIcon={true} />
         </Box>
       </MainScreenTopContainer>
-
       <ContentBgTemplate>
         <ProjectTableTemplateList />
       </ContentBgTemplate>
