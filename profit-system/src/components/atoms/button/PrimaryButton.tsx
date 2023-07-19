@@ -4,7 +4,7 @@ import { FC, memo } from "react";
 type Props = {
   text: string;
   size?: string;
-  onClick: () => void;
+  onClick?: () => void;
 };
 
 export const PrimaryButton: FC<Props> = memo((props) => {

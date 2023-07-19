@@ -7,7 +7,7 @@ type Props = {
   secondaryPx?: string;
   ml?: string;
   primaryText?: string;
-  onClick: () => void;
+  onClick?: () => void;
 };
 
 export const FormButtonContainer: FC<Props> = memo((props) => {
