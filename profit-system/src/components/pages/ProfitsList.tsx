@@ -21,21 +21,15 @@ export const ProfitsList: FC = memo(() => {
           mb="50px"
         >
           <ProfitHeadlineItem text="AXXXXXXXX社向け会計システム開発" />
-          <Box>
-            <Flex>
-              <ProfitInfoItem pTitle="売上" pDescription="1,000,000" />
-              <ProfitInfoItem pTitle="粗利益" pDescription="500,000" />
-            </Flex>
-            <Divider my="4" />
-            <Flex>
-              <ProfitInfoItem pTitle="コスト合計" pDescription="500,000" />
-              <ProfitInfoItem
-                pTitle="稼働時間"
-                pDescription="200"
-                unit="時間"
-              />
-            </Flex>
-          </Box>
+          <Flex>
+            <ProfitInfoItem pTitle="売上" pDescription="1,000,000" />
+            <ProfitInfoItem pTitle="粗利益" pDescription="500,000" />
+          </Flex>
+          <Divider my="4" />
+          <Flex>
+            <ProfitInfoItem pTitle="コスト合計" pDescription="500,000" />
+            <ProfitInfoItem pTitle="稼働時間" pDescription="200" unit="時間" />
+          </Flex>
         </Box>
 
         <Box
@@ -50,21 +44,15 @@ export const ProfitsList: FC = memo(() => {
           mb="50px"
         >
           <ProfitHeadlineItem text="B社向けシステム開発" />
-          <Box>
-            <Flex>
-              <ProfitInfoItem pTitle="売上" pDescription="2,000,000" />
-              <ProfitInfoItem pTitle="粗利益" pDescription="1,000,000" />
-            </Flex>
-            <Divider my="4" />
-            <Flex>
-              <ProfitInfoItem pTitle="コスト合計" pDescription="500,000" />
-              <ProfitInfoItem
-                pTitle="稼働時間"
-                pDescription="200"
-                unit="時間"
-              />
-            </Flex>
-          </Box>
+          <Flex>
+            <ProfitInfoItem pTitle="売上" pDescription="2,000,000" />
+            <ProfitInfoItem pTitle="粗利益" pDescription="1,000,000" />
+          </Flex>
+          <Divider my="4" />
+          <Flex>
+            <ProfitInfoItem pTitle="コスト合計" pDescription="500,000" />
+            <ProfitInfoItem pTitle="稼働時間" pDescription="200" unit="時間" />
+          </Flex>
         </Box>
       </Flex>
     </>
