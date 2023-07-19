@@ -23,7 +23,7 @@ export const CompanyRegisterForm: FC = memo(() => {
     });
     console.log(docRef);
 
-    // setCompanyName("");
+    setCompanyName("");
     // setCompanyPostCode("");
     // setCompanyAddress("");
     // setCompanyPhone("");
