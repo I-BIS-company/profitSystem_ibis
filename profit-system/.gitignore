@@ -24,10 +24,12 @@ dist-ssr
 *.sw?
 
 ## Firebase directories and files
-firebase.ts
 /.firebase
 .firebaserc
 firebase.json
 
 firebase-debug.log
 firestore-debug.log
+
+## Env
+.env*
