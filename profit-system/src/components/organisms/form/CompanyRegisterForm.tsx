@@ -7,34 +7,45 @@ import { FormButtonContainer } from "../../molecules/container/FormButtonContain
 import { MainContentContainer } from "../../molecules/container/MainContentContainer";
 import { addDoc, collection } from "@firebase/firestore";
 import { db } from "../../../firebase";
+import { useNavigate } from "react-router";
 
 export const CompanyRegisterForm: FC = memo(() => {
+  const navigate = useNavigate();
   const [companyName, setCompanyName] = useState("");
   // const [companyPostCode, setCompanyPostCode] = useState("");
-  // const [companyAddress, setCompanyAddress] = useState("");
+  const [companyAddress, setCompanyAddress] = useState("");
   // const [companyPhone, setCompanyPhone] = useState("");
+
+  const handleCompanyName = (newValue: string) => {
+    setCompanyName(newValue);
+  };
+  const handleCompanyAddress = (newValue: string) => {
+    setCompanyAddress(newValue);
+  };
 
   const onClickRegister = async () => {
     const docRef = await addDoc(collection(db, "company"), {
       name: companyName,
       // postCode: companyPostCode,
-      // address: companyAddress,
+      address: companyAddress,
       // phone: companyPhone,
     });
     console.log(docRef);
 
     setCompanyName("");
     // setCompanyPostCode("");
-    // setCompanyAddress("");
+    setCompanyAddress("");
     // setCompanyPhone("");
+
+    navigate("/companies_list");
   };
 
   return (
     <FormControl>
       <MainContentContainer>
-        <PrimaryFormItem text="顧客名" value={companyName} />
+        <PrimaryFormItem text="顧客名" handleValueChange={handleCompanyName} />
         {/* <PostNumFormItem /> */}
-        {/* <PrimaryFormItem text="住所" /> */}
+        <PrimaryFormItem text="住所" handleValueChange={handleCompanyAddress} />
         {/* <PhoneFormItem /> */}
         <FormButtonContainer
           secondaryPx="10"
