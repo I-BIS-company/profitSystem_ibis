@@ -31,3 +31,6 @@ firebase.json
 
 firebase-debug.log
 firestore-debug.log
+
+## Env
+.env*
