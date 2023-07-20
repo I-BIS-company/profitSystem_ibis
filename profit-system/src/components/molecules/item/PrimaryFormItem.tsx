@@ -8,13 +8,9 @@ type Props = {
 
 export const PrimaryFormItem: FC<Props> = memo((props) => {
   const { text, handleValueChange } = props;
-  // const [input, setInput] = useState(value);
 
-  // const onChangeInput = (e: ChangeEvent<HTMLInputElement>) => {
-  //   const value = e.target.value;
-  // };
-  const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
-    const value = event.target.value;
+  const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
     handleValueChange?.(value);
   };
 
