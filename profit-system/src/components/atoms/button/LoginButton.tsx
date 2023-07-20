@@ -11,7 +11,6 @@ import {
   getDoc,
 } from "firebase/firestore";
 
-// test
 export const LoginButton: FC = memo(() => {
   const navigate = useNavigate();
   const firestore = getFirestore();
