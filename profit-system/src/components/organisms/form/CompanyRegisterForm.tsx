@@ -49,14 +49,6 @@ export const CompanyRegisterForm: FC = memo(() => {
       phone: `${companyPhone1}-${companyPhone2}-${companyPhone3}`,
     });
 
-    setCompanyName("");
-    setCompanyPostCode1("");
-    setCompanyPostCode2("");
-    setCompanyAddress("");
-    setCompanyPhone1("");
-    setCompanyPhone2("");
-    setCompanyPhone3("");
-
     navigate("/companies_list");
   };
 
