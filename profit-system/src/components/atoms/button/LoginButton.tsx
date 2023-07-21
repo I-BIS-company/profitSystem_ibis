@@ -1,19 +1,13 @@
 import { Button } from "@chakra-ui/react";
 import { signInWithPopup } from "firebase/auth";
 import { FC, memo, useEffect, useState } from "react";
-import { auth, provider } from "../../../firebase";
+import { auth, db, provider } from "../../../firebase";
 import { useNavigate } from "react-router-dom";
-import {
-  collection,
-  doc,
-  getFirestore,
-  setDoc,
-  getDoc,
-} from "firebase/firestore";
+import { collection, doc, setDoc, getDoc } from "firebase/firestore";
 
 export const LoginButton: FC = memo(() => {
   const navigate = useNavigate();
-  const firestore = getFirestore();
+  // const firestore = getFirestore();
   const [isRegistered, setIsRegistered] = useState(false);
 
   useEffect(() => {
@@ -23,7 +17,7 @@ export const LoginButton: FC = memo(() => {
   const checkRegistration = async () => {
     if (auth.currentUser) {
       const { uid } = auth.currentUser;
-      const userDocRef = doc(collection(firestore, "users"), uid);
+      const userDocRef = doc(collection(db, "users"), uid);
       const docSnapshot = await getDoc(userDocRef);
       setIsRegistered(
         docSnapshot.exists() && docSnapshot.data().registered === true
@@ -39,7 +33,7 @@ export const LoginButton: FC = memo(() => {
         const { uid, displayName } = auth.currentUser;
 
         if (!isRegistered) {
-          const userDocRef = doc(collection(firestore, "users"), uid);
+          const userDocRef = doc(collection(db, "users"), uid);
           await setDoc(userDocRef, {
             id: uid,
             name: displayName,
