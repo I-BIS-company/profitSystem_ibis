@@ -7,7 +7,6 @@ import { collection, doc, setDoc, getDoc } from "firebase/firestore";
 
 export const LoginButton: FC = memo(() => {
   const navigate = useNavigate();
-  // const firestore = getFirestore();
   const [isRegistered, setIsRegistered] = useState(false);
 
   useEffect(() => {
