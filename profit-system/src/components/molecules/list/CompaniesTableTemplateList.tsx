@@ -3,7 +3,7 @@ import { memo, FC, useState, useEffect } from "react";
 import { TableHeadItem } from "../../atoms/item/TableHeadItem";
 import { TableBodyItem } from "../../atoms/item/TableBodyItem";
 import { EditItem } from "../EditItem";
-import { DocumentData, collection, doc, getDocs } from "firebase/firestore";
+import { DocumentData, collection, getDocs } from "firebase/firestore";
 import { db } from "../../../firebase";
 
 export const CompaniesTableTemplateList: FC = memo(() => {
