@@ -15,14 +15,11 @@ export const CompaniesTableTemplateList: FC = memo(() => {
       const querySnapshot = await getDocs(collection(db, "company"));
       querySnapshot.forEach((doc) => {
         companyList.push(doc.data());
-        // console.log(doc.data());
-        console.log(doc.id);
       });
       setCompanyData(companyList);
     };
     getCompanyData();
   }, []);
-  console.log(companyData);
 
   return (
     <TableContainer>
