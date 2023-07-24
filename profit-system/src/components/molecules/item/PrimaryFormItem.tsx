@@ -1,17 +1,18 @@
 import { Flex, FormLabel, Input } from "@chakra-ui/react";
-import { memo, FC, useState, ChangeEvent } from "react";
+import { memo, FC, ChangeEvent } from "react";
 
 type Props = {
   text: string;
-  value?: string;
+  handleValueChange?: (value: string) => void;
 };
 
 export const PrimaryFormItem: FC<Props> = memo((props) => {
-  const { text, value } = props;
-  const [input, setInput] = useState(value);
+  const { text, handleValueChange } = props;
 
-  const onChangeInput = (e: ChangeEvent<HTMLInputElement>) =>
-    setInput(e.target.value);
+  const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    handleValueChange?.(value);
+  };
 
   return (
     <Flex
@@ -26,7 +27,7 @@ export const PrimaryFormItem: FC<Props> = memo((props) => {
         {text}
       </FormLabel>
       <Flex>
-        <Input w="400px" value={input} onChange={onChangeInput} />
+        <Input w="400px" onChange={handleInputChange} />
       </Flex>
     </Flex>
   );

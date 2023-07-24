@@ -4,10 +4,11 @@ import { FC, memo } from "react";
 type Props = {
   text: string;
   size?: string;
+  onClick?: () => void;
 };
 
 export const PrimaryButton: FC<Props> = memo((props) => {
-  const { text, size } = props;
+  const { text, size, onClick } = props;
   return (
     <Button
       bg="green.400"
@@ -18,6 +19,7 @@ export const PrimaryButton: FC<Props> = memo((props) => {
       shadow="md"
       variant="outline"
       _hover={{ opacity: 0.8 }}
+      onClick={onClick}
     >
       {text}
     </Button>
