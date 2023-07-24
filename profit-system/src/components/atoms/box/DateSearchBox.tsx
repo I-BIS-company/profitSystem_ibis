@@ -7,7 +7,7 @@ export const DateSearchSelect: FC = () => {
     <Box>
       <Select bg="white" outline="none">
         {months.map((month) => (
-          <option>{month}</option>
+          <option key={month}>{month}</option>
         ))}
       </Select>
     </Box>
