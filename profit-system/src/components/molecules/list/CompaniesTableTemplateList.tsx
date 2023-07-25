@@ -7,19 +7,30 @@ import { DocumentData, collection, getDocs } from "firebase/firestore";
 import { db } from "../../../firebase";
 import { useNavigate } from "react-router-dom";
 
+type CompanyDbType = {
+  id: string;
+  name: string;
+  address: string;
+  postCode: string;
+  phone: string;
+};
+
 export const CompaniesTableTemplateList: FC = memo(() => {
   const navigate = useNavigate();
-  const [companyData, setCompanyData] = useState<DocumentData>([]);
+  const [companyData, setCompanyData] = useState<CompanyDbType[]>([]);
 
   useEffect(() => {
     const getCompanyData = async () => {
-      const companyList: DocumentData[] = [];
+      const companyList: CompanyDbType[] = [];
       const querySnapshot = await getDocs(collection(db, "company"));
       querySnapshot.forEach((doc) => {
-        const dataId = {
+        companyList.push({
           id: doc.id,
-        };
-        companyList.push({ ...dataId, ...doc.data() });
+          name: doc.data().name,
+          address: doc.data().address,
+          postCode: doc.data().postCode,
+          phone: doc.data().phone,
+        });
       });
       setCompanyData(companyList);
     };
