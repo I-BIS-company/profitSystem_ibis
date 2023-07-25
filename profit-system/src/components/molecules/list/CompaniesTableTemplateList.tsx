@@ -3,7 +3,7 @@ import { memo, FC, useState, useEffect } from "react";
 import { TableHeadItem } from "../../atoms/item/TableHeadItem";
 import { TableBodyItem } from "../../atoms/item/TableBodyItem";
 import { EditItem } from "../EditItem";
-import { DocumentData, collection, getDocs } from "firebase/firestore";
+import { collection, getDocs } from "firebase/firestore";
 import { db } from "../../../firebase";
 import { useNavigate } from "react-router-dom";
 
@@ -36,7 +36,6 @@ export const CompaniesTableTemplateList: FC = memo(() => {
     };
     getCompanyData();
   }, []);
-  console.log(companyData);
 
   const onClickEdit = (docId: string) => {
     navigate("/companies_list/company_edit", {
@@ -59,7 +58,7 @@ export const CompaniesTableTemplateList: FC = memo(() => {
           </Tr>
         </Thead>
         <Tbody alignItems="center">
-          {companyData.map((data: DocumentData) => (
+          {companyData.map((data) => (
             <Tr fontSize="14" key={data.id}>
               <TableBodyItem text={data.name} />
               <TableBodyItem text={data.postCode} />
