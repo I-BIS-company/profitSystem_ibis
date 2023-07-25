@@ -48,7 +48,11 @@ export const Log: FC = memo(() => {
       )}
       {selectedMonth === "2023/08" && (
         <Box>
-          <LogDate date="2023/8" />
+          <LogDate date="2023/8/8" />
+          <ContentBgTemplate>
+            <LogTableTemplateList />
+          </ContentBgTemplate>
+          <LogDate date="2023/8/4" />
           <ContentBgTemplate>
             <LogTableTemplateList />
           </ContentBgTemplate>
