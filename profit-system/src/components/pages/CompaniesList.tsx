@@ -33,7 +33,8 @@ export const CompaniesList: FC = memo(() => {
     const filteredCompanyListData: CompanyDbType[] = [];
     const q = query(
       collection(db, "company"),
-      where("name", "==", searchValue)
+      where("name", ">=", searchValue),
+      where("name", "<", searchValue + "\uf8ff")
     );
     const querySnapshot = await getDocs(q);
     querySnapshot.forEach((doc) => {
