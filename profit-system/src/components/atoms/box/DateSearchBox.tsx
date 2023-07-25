@@ -1,26 +1,30 @@
 import { Box, Select } from "@chakra-ui/react";
-import { FC, useState } from "react";
+import { FC, memo } from "react";
 
-export const DateSearchSelect: FC = () => {
+type Props = {
+  value: string;
+  onChange: (selectedMonth: string) => void;
+};
+
+export const DateSearchSelect: FC<Props> = memo((props) => {
+  const { value, onChange } = props;
   const months = ["2023/06", "2023/07", "2023/08"];
-  const [selectMonth, setSelectMonth] = useState(months[0]);
 
   const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    setSelectMonth(e.target.value);
-    console.log(setSelectMonth);
+    const selectedMonth = e.target.value;
+    console.log(selectedMonth);
+    onChange(selectedMonth);
   };
+
   return (
     <Box>
-      <Select
-        bg="white"
-        outline="none"
-        value={selectMonth}
-        onChange={handleChange}
-      >
+      <Select bg="white" outline="none" value={value} onChange={handleChange}>
         {months.map((month) => (
-          <option key={month}>{month}</option>
+          <option key={month} value={month}>
+            {month}
+          </option>
         ))}
       </Select>
     </Box>
   );
-};
+});
