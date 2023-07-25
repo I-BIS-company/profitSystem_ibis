@@ -4,10 +4,11 @@ import { memo, FC, ChangeEvent } from "react";
 type Props = {
   text: string;
   handleValueChange?: (value: string) => void;
+  value?: string;
 };
 
 export const PrimaryFormItem: FC<Props> = memo((props) => {
-  const { text, handleValueChange } = props;
+  const { text, handleValueChange, value } = props;
 
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
@@ -27,7 +28,7 @@ export const PrimaryFormItem: FC<Props> = memo((props) => {
         {text}
       </FormLabel>
       <Flex>
-        <Input w="400px" onChange={handleInputChange} />
+        <Input w="400px" onChange={handleInputChange} value={value} />
       </Flex>
     </Flex>
   );

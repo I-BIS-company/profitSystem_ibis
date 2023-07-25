@@ -5,6 +5,8 @@ import { memo, FC, ChangeEvent } from "react";
 type Props = {
   handleValueChange1?: (value: string) => void;
   handleValueChange2?: (value: string) => void;
+  value1?: string;
+  value2?: string;
 };
 
 const PostIcon = createIcon({
@@ -14,7 +16,7 @@ const PostIcon = createIcon({
 });
 
 export const PostNumFormItem: FC<Props> = memo((props) => {
-  const { handleValueChange1, handleValueChange2 } = props;
+  const { handleValueChange1, handleValueChange2, value1, value2 } = props;
 
   const handlePostChange1 = (e: ChangeEvent<HTMLInputElement>) => {
     const value1 = e.target.value;
@@ -39,9 +41,19 @@ export const PostNumFormItem: FC<Props> = memo((props) => {
       </FormLabel>
       <Flex alignItems="center">
         <PostIcon color="blackAlpha.500" />
-        <Input mx="18px" w="150px" onChange={handlePostChange1} />
+        <Input
+          mx="18px"
+          w="150px"
+          onChange={handlePostChange1}
+          value={value1}
+        />
         <Text fontSize="2xl">-</Text>
-        <Input mx="18px" w="150px" onChange={handlePostChange2} />
+        <Input
+          mx="18px"
+          w="150px"
+          onChange={handlePostChange2}
+          value={value2}
+        />
       </Flex>
     </Flex>
   );
