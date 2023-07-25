@@ -6,14 +6,16 @@ import {
   InputGroup,
   InputRightElement,
 } from "@chakra-ui/react";
-import { FC, memo } from "react";
+import { ChangeEvent, FC, memo } from "react";
 
 type Props = {
   text: string;
+  handleSearchText?: (e: ChangeEvent<HTMLInputElement>) => void;
+  onClick?: () => void;
 };
 
 export const PrimarySearchButton: FC<Props> = memo((props) => {
-  const { text } = props;
+  const { text, handleSearchText, onClick } = props;
   return (
     <Box display="flex" alignItems="center">
       <InputGroup>
@@ -24,6 +26,7 @@ export const PrimarySearchButton: FC<Props> = memo((props) => {
           bg="white"
           pr="20"
           pl="3"
+          onChange={handleSearchText}
         />
         <InputRightElement width="auto" paddingRight="0">
           <Button
@@ -33,6 +36,7 @@ export const PrimarySearchButton: FC<Props> = memo((props) => {
             }}
             colorScheme="blue"
             _hover={{ opacity: 0.8 }}
+            onClick={onClick}
           >
             検索
             <Search2Icon boxSize="5" bg="blue.500" pl="2" />
