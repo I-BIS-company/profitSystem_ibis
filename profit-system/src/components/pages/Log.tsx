@@ -25,7 +25,13 @@ export const Log: FC = memo(() => {
         </ContentBgTemplate>
       </Box>
       <Box>
-        <LogDate date="2023/6/1" />
+        <LogDate date="2023/7/2" />
+        <ContentBgTemplate>
+          <LogTableTemplateList />
+        </ContentBgTemplate>
+      </Box>
+      <Box>
+        <LogDate date="2023/8/1" />
         <ContentBgTemplate>
           <LogTableTemplateList />
         </ContentBgTemplate>

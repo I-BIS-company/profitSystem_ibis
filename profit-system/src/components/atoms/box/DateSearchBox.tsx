@@ -5,8 +5,9 @@ export const DateSearchSelect: FC = () => {
   const months = ["2023/06", "2023/07", "2023/08"];
   const [selectMonth, setSelectMonth] = useState(months[0]);
 
-  const handleChange = (e: any) => {
+  const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setSelectMonth(e.target.value);
+    console.log(setSelectMonth);
   };
   return (
     <Box>
