@@ -1,39 +1,18 @@
 import { Table, TableContainer, Tbody, Thead, Tr } from "@chakra-ui/react";
-import { memo, FC, useState, useEffect } from "react";
+import { memo, FC } from "react";
 import { TableHeadItem } from "../../atoms/item/TableHeadItem";
 import { TableBodyItem } from "../../atoms/item/TableBodyItem";
 import { EditItem } from "../EditItem";
-import { collection, getDocs } from "firebase/firestore";
-import { db } from "../../../firebase";
 import { useNavigate } from "react-router-dom";
-import { CompanyDbType } from "../../../types/company/company";
+import { CompanyDbType } from "../../../types/company/CompanyDbType";
 
 type Props = {
-  filteredCompanyList?: CompanyDbType[];
+  filteredCompanyList: CompanyDbType[];
 };
 
 export const CompaniesTableTemplateList: FC<Props> = memo((props) => {
   const { filteredCompanyList } = props;
   const navigate = useNavigate();
-  const [companyData, setCompanyData] = useState<CompanyDbType[]>([]);
-
-  useEffect(() => {
-    const getCompanyData = async () => {
-      const companyList: CompanyDbType[] = [];
-      const querySnapshot = await getDocs(collection(db, "company"));
-      querySnapshot.forEach((doc) => {
-        companyList.push({
-          id: doc.id,
-          name: doc.data().name,
-          address: doc.data().address,
-          postCode: doc.data().postCode,
-          phone: doc.data().phone,
-        });
-      });
-      setCompanyData(companyList);
-    };
-    getCompanyData();
-  }, []);
 
   const onClickEdit = (
     docId: string,
@@ -66,45 +45,25 @@ export const CompaniesTableTemplateList: FC<Props> = memo((props) => {
           </Tr>
         </Thead>
         <Tbody alignItems="center">
-          {filteredCompanyList?.length
-            ? filteredCompanyList.map((data) => (
-                <Tr fontSize="14" key={data.id}>
-                  <TableBodyItem text={data.name} />
-                  <TableBodyItem text={data.postCode} />
-                  <TableBodyItem text={data.address} />
-                  <TableBodyItem text={data.phone} />
-                  <EditItem
-                    onClick={() =>
-                      onClickEdit(
-                        data.id,
-                        data.name,
-                        data.postCode,
-                        data.address,
-                        data.phone
-                      )
-                    }
-                  />
-                </Tr>
-              ))
-            : companyData.map((data) => (
-                <Tr fontSize="14" key={data.id}>
-                  <TableBodyItem text={data.name} />
-                  <TableBodyItem text={data.postCode} />
-                  <TableBodyItem text={data.address} />
-                  <TableBodyItem text={data.phone} />
-                  <EditItem
-                    onClick={() =>
-                      onClickEdit(
-                        data.id,
-                        data.name,
-                        data.postCode,
-                        data.address,
-                        data.phone
-                      )
-                    }
-                  />
-                </Tr>
-              ))}
+          {filteredCompanyList.map((data) => (
+            <Tr fontSize="14" key={data.id}>
+              <TableBodyItem text={data.name} />
+              <TableBodyItem text={data.postCode} />
+              <TableBodyItem text={data.address} />
+              <TableBodyItem text={data.phone} />
+              <EditItem
+                onClick={() =>
+                  onClickEdit(
+                    data.id,
+                    data.name,
+                    data.postCode,
+                    data.address,
+                    data.phone
+                  )
+                }
+              />
+            </Tr>
+          ))}
         </Tbody>
       </Table>
     </TableContainer>
