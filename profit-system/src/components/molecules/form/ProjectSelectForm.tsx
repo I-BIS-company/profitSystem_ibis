@@ -3,7 +3,7 @@ import { ChangeEvent, FC, memo } from "react";
 
 type Props = {
   value?: string;
-  onChange: (e: ChangeEvent<HTMLSelectElement>) => void;
+  onChange?: (e: ChangeEvent<HTMLSelectElement>) => void;
 };
 
 export const ProjectSelectForm: FC<Props> = memo((props) => {
