@@ -7,15 +7,26 @@ type Props = {
   secondaryPx?: string;
   ml?: string;
   primaryText?: string;
-  onClick?: () => void;
+  primaryOnClick?: () => void;
+  secondaryOnClick?: () => void;
 };
 
 export const FormButtonContainer: FC<Props> = memo((props) => {
-  const { secondaryPx, ml, primaryText = "登録", onClick } = props;
+  const {
+    secondaryPx,
+    ml,
+    primaryText = "登録",
+    primaryOnClick,
+    secondaryOnClick,
+  } = props;
   return (
     <Flex justifyContent="center" alignItems="center" gap="50px" ml={ml}>
-      <SecondaryButton text="一覧に戻る" px={secondaryPx} />
-      <PrimaryButton text={primaryText} onClick={onClick} />
+      <SecondaryButton
+        text="一覧に戻る"
+        px={secondaryPx}
+        onClick={secondaryOnClick}
+      />
+      <PrimaryButton text={primaryText} onClick={primaryOnClick} />
     </Flex>
   );
 });
