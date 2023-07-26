@@ -1,12 +1,12 @@
 import { FormControl } from "@chakra-ui/react";
-import { FC, memo, useEffect, useState } from "react";
+import { FC, memo, useState } from "react";
 import { FormButtonContainer } from "../../molecules/container/FormButtonContainer";
 import { MainContentContainer } from "../../molecules/container/MainContentContainer";
 import { PrimaryFormItem } from "../../molecules/item/PrimaryFormItem";
 import { PostNumFormItem } from "../../molecules/item/PostNumFormItem";
 import { PhoneFormItem } from "../../molecules/item/PhoneFormItem";
 import { useLocation, useNavigate } from "react-router-dom";
-import { doc, getDoc, updateDoc } from "firebase/firestore";
+import { doc, updateDoc } from "firebase/firestore";
 import { db } from "../../../firebase";
 
 export const CompanyEditForm: FC = memo(() => {
@@ -14,38 +14,19 @@ export const CompanyEditForm: FC = memo(() => {
   const location = useLocation();
   const docId = location.state.docId;
   const companyDocRef = doc(db, "company", docId);
-  const [companyName, setCompanyName] = useState("");
-  const [companyAddress, setCompanyAddress] = useState("");
-  const [companyPostCode1, setCompanyPostCode1] = useState("");
-  const [companyPostCode2, setCompanyPostCode2] = useState("");
-  const [companyPhone1, setCompanyPhone1] = useState("");
-  const [companyPhone2, setCompanyPhone2] = useState("");
-  const [companyPhone3, setCompanyPhone3] = useState("");
 
-  useEffect(() => {
-    const getCompanyEditData = async () => {
-      const companyDocSnap = await getDoc(companyDocRef);
-      if (companyDocSnap.exists()) {
-        setCompanyName(companyDocSnap.data().name);
-        setCompanyAddress(companyDocSnap.data().address);
-        const postCode = companyDocSnap.data().postCode;
-        const postCode1 = postCode.split("-")[0];
-        const postCode2 = postCode.split("-")[1];
-        setCompanyPostCode1(postCode1);
-        setCompanyPostCode2(postCode2);
-        const phone = companyDocSnap.data().phone;
-        const phone1 = phone.split("-")[0];
-        const phone2 = phone.split("-")[1];
-        const phone3 = phone.split("-")[2];
-        setCompanyPhone1(phone1);
-        setCompanyPhone2(phone2);
-        setCompanyPhone3(phone3);
-      } else {
-        console.log("No such document!");
-      }
-    };
-    getCompanyEditData();
-  }, []);
+  const [companyName, setCompanyName] = useState(location.state.name);
+  const [companyAddress, setCompanyAddress] = useState(location.state.address);
+  const postCode1 = location.state.postCode.split("-")[0];
+  const postCode2 = location.state.postCode.split("-")[1];
+  const [companyPostCode1, setCompanyPostCode1] = useState(postCode1);
+  const [companyPostCode2, setCompanyPostCode2] = useState(postCode2);
+  const phone1 = location.state.phone.split("-")[0];
+  const phone2 = location.state.phone.split("-")[1];
+  const phone3 = location.state.phone.split("-")[2];
+  const [companyPhone1, setCompanyPhone1] = useState(phone1);
+  const [companyPhone2, setCompanyPhone2] = useState(phone2);
+  const [companyPhone3, setCompanyPhone3] = useState(phone3);
 
   const handleCompanyName = (newValue: string) => {
     setCompanyName(newValue);
