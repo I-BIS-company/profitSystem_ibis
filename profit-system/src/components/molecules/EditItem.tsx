@@ -2,7 +2,12 @@ import { Box, Td } from "@chakra-ui/react";
 import { FC } from "react";
 import { SecondaryButton } from "../atoms/button/SecondaryButton";
 
-export const EditItem: FC = () => {
+type Props = {
+  onClick?: () => void;
+};
+
+export const EditItem: FC<Props> = (props) => {
+  const { onClick } = props;
   return (
     <Td
       border="none"
@@ -11,7 +16,7 @@ export const EditItem: FC = () => {
       alignItems="center"
     >
       <Box display="flex" justifyContent="center" alignItems="center" pt="2.5">
-        <SecondaryButton text="編集" size="sm" />
+        <SecondaryButton text="編集" size="sm" onClick={onClick} />
       </Box>
     </Td>
   );

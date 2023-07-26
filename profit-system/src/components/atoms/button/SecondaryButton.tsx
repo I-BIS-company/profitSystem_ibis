@@ -5,10 +5,11 @@ type Props = {
   text: string;
   size?: string;
   px?: string;
+  onClick?: () => void;
 };
 
 export const SecondaryButton: FC<Props> = memo((props) => {
-  const { text, size, px } = props;
+  const { text, size, px, onClick } = props;
   return (
     <Button
       bg="white"
@@ -20,6 +21,7 @@ export const SecondaryButton: FC<Props> = memo((props) => {
       variant="outline"
       borderColor="black"
       _hover={{ opacity: 0.8 }}
+      onClick={onClick}
     >
       {text}
     </Button>

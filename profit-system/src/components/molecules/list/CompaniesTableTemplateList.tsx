@@ -3,23 +3,57 @@ import { memo, FC, useState, useEffect } from "react";
 import { TableHeadItem } from "../../atoms/item/TableHeadItem";
 import { TableBodyItem } from "../../atoms/item/TableBodyItem";
 import { EditItem } from "../EditItem";
-import { DocumentData, collection, getDocs } from "firebase/firestore";
+import { collection, getDocs } from "firebase/firestore";
 import { db } from "../../../firebase";
+import { useNavigate } from "react-router-dom";
+
+type CompanyDbType = {
+  id: string;
+  name: string;
+  address: string;
+  postCode: string;
+  phone: string;
+};
 
 export const CompaniesTableTemplateList: FC = memo(() => {
-  const [companyData, setCompanyData] = useState<DocumentData>([]);
+  const navigate = useNavigate();
+  const [companyData, setCompanyData] = useState<CompanyDbType[]>([]);
 
   useEffect(() => {
     const getCompanyData = async () => {
-      const companyList: DocumentData[] = [];
+      const companyList: CompanyDbType[] = [];
       const querySnapshot = await getDocs(collection(db, "company"));
       querySnapshot.forEach((doc) => {
-        companyList.push(doc.data());
+        companyList.push({
+          id: doc.id,
+          name: doc.data().name,
+          address: doc.data().address,
+          postCode: doc.data().postCode,
+          phone: doc.data().phone,
+        });
       });
       setCompanyData(companyList);
     };
     getCompanyData();
   }, []);
+
+  const onClickEdit = (
+    docId: string,
+    name: string,
+    postCode: string,
+    address: string,
+    phone: string
+  ) => {
+    navigate("/companies_list/company_edit", {
+      state: {
+        docId: docId,
+        name: name,
+        postCode: postCode,
+        address: address,
+        phone: phone,
+      },
+    });
+  };
 
   return (
     <TableContainer>
@@ -34,13 +68,23 @@ export const CompaniesTableTemplateList: FC = memo(() => {
           </Tr>
         </Thead>
         <Tbody alignItems="center">
-          {companyData.map((data: DocumentData) => (
-            <Tr fontSize="14" key={data.name}>
+          {companyData.map((data) => (
+            <Tr fontSize="14" key={data.id}>
               <TableBodyItem text={data.name} />
               <TableBodyItem text={data.postCode} />
               <TableBodyItem text={data.address} />
               <TableBodyItem text={data.phone} />
-              <EditItem />
+              <EditItem
+                onClick={() =>
+                  onClickEdit(
+                    data.id,
+                    data.name,
+                    data.postCode,
+                    data.address,
+                    data.phone
+                  )
+                }
+              />
             </Tr>
           ))}
         </Tbody>

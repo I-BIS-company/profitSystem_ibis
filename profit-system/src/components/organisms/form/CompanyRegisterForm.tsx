@@ -48,7 +48,10 @@ export const CompanyRegisterForm: FC = memo(() => {
       address: companyAddress,
       phone: `${companyPhone1}-${companyPhone2}-${companyPhone3}`,
     });
+    navigate("/companies_list");
+  };
 
+  const onClickBack = () => {
     navigate("/companies_list");
   };
 
@@ -69,7 +72,8 @@ export const CompanyRegisterForm: FC = memo(() => {
         <FormButtonContainer
           secondaryPx="10"
           ml="50px"
-          onClick={onClickRegister}
+          primaryOnClick={onClickRegister}
+          secondaryOnClick={onClickBack}
         />
       </MainContentContainer>
     </FormControl>
