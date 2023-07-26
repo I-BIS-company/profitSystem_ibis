@@ -14,7 +14,6 @@ export const Log: FC = memo(() => {
   const handleMonthChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const selectedMonth = e.target.value;
     setSelectedMonth(selectedMonth);
-    console.log(selectedMonth);
   };
 
   return (
