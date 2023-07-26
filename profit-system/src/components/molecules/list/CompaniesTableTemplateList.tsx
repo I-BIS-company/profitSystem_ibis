@@ -37,10 +37,20 @@ export const CompaniesTableTemplateList: FC = memo(() => {
     getCompanyData();
   }, []);
 
-  const onClickEdit = (docId: string) => {
+  const onClickEdit = (
+    docId: string,
+    name: string,
+    postCode: string,
+    address: string,
+    phone: string
+  ) => {
     navigate("/companies_list/company_edit", {
       state: {
         docId: docId,
+        name: name,
+        postCode: postCode,
+        address: address,
+        phone: phone,
       },
     });
   };
@@ -64,7 +74,17 @@ export const CompaniesTableTemplateList: FC = memo(() => {
               <TableBodyItem text={data.postCode} />
               <TableBodyItem text={data.address} />
               <TableBodyItem text={data.phone} />
-              <EditItem onClick={() => onClickEdit(data.id)} />
+              <EditItem
+                onClick={() =>
+                  onClickEdit(
+                    data.id,
+                    data.name,
+                    data.postCode,
+                    data.address,
+                    data.phone
+                  )
+                }
+              />
             </Tr>
           ))}
         </Tbody>
