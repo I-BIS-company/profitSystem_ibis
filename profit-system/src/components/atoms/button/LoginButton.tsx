@@ -1,11 +1,12 @@
 import { Button } from "@chakra-ui/react";
 import { signInWithPopup } from "firebase/auth";
-import { FC, memo } from "react";
+import { FC, memo, useState } from "react";
 import { auth, db, provider } from "../../../firebase";
 import { useNavigate } from "react-router-dom";
 import { collection, doc, getDoc, setDoc } from "firebase/firestore";
 
 export const LoginButton: FC = memo(() => {
+  const [userId, setUserId] = useState("");
   const navigate = useNavigate();
 
   const signIn = async () => {
@@ -14,6 +15,8 @@ export const LoginButton: FC = memo(() => {
 
       if (auth.currentUser) {
         const { uid, displayName } = auth.currentUser;
+        console.log(setUserId(uid));
+
         const userDocRef = doc(collection(db, "users"), uid);
         const docSnapshot = await getDoc(userDocRef);
 
@@ -36,6 +39,7 @@ export const LoginButton: FC = memo(() => {
   return (
     <Button
       onClick={signIn}
+      value={userId}
       bg="orange.300"
       color="blackAlpha.900"
       size="lg"
