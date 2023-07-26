@@ -1,11 +1,16 @@
 import { FormControl } from "@chakra-ui/react";
-import { memo, FC } from "react";
+import { memo, FC, useState, ChangeEvent } from "react";
 import { MainContentContainer } from "../../molecules/container/MainContentContainer";
 import { ProjectSelectForm } from "../../molecules/form/ProjectSelectForm";
 import { WorkhourSelectForm } from "../../molecules/form/WorkhourSelectForm";
 import { FormButtonContainer } from "../../molecules/container/FormButtonContainer";
 
 export const WorkhourRegisterForm: FC = memo(() => {
+  const [project, setProject] = useState("");
+
+  const onChangeProject = (e: ChangeEvent<HTMLSelectElement>) =>
+    setProject(e.target.value);
+  console.log(project);
   return (
     <MainContentContainer>
       <FormControl
@@ -17,7 +22,7 @@ export const WorkhourRegisterForm: FC = memo(() => {
         flexDirection="column"
         display="flex"
       >
-        <ProjectSelectForm />
+        <ProjectSelectForm value={project} onChange={onChangeProject} />
         <WorkhourSelectForm />
         <FormButtonContainer secondaryPx="10" />
       </FormControl>

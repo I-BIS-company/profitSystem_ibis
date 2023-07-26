@@ -1,16 +1,13 @@
 import { Divider, Flex, FormLabel, Select } from "@chakra-ui/react";
-import { ChangeEvent, FC, memo, useState } from "react";
+import { ChangeEvent, FC, memo } from "react";
 
 type Props = {
   value?: string;
+  onChange: (e: ChangeEvent<HTMLSelectElement>) => void;
 };
 
 export const ProjectSelectForm: FC<Props> = memo((props) => {
-  const { value } = props;
-  const [project, setProject] = useState(value);
-
-  const onChangeProject = (e: ChangeEvent<HTMLSelectElement>) =>
-    setProject(e.target.value);
+  const { value, onChange } = props;
 
   return (
     <>
@@ -32,8 +29,8 @@ export const ProjectSelectForm: FC<Props> = memo((props) => {
         w="75%"
         borderRadius="20px"
         placeholder="案件名を選択"
-        value={project}
-        onChange={onChangeProject}
+        value={value}
+        onChange={onChange}
       >
         <option value="A向けシステム開発">A向けシステム開発</option>
         <option value="B向けシステム開発">B向けシステム開発</option>
