@@ -6,14 +6,7 @@ import { EditItem } from "../EditItem";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../../../firebase";
 import { useNavigate } from "react-router-dom";
-
-type CompanyDbType = {
-  id: string;
-  name: string;
-  address: string;
-  postCode: string;
-  phone: string;
-};
+import { CompanyDbType } from "../../../types/company/company";
 
 type Props = {
   filteredCompanyList?: CompanyDbType[];
@@ -42,10 +35,20 @@ export const CompaniesTableTemplateList: FC<Props> = memo((props) => {
     getCompanyData();
   }, []);
 
-  const onClickEdit = (docId: string) => {
+  const onClickEdit = (
+    docId: string,
+    name: string,
+    postCode: string,
+    address: string,
+    phone: string
+  ) => {
     navigate("/companies_list/company_edit", {
       state: {
         docId: docId,
+        name: name,
+        postCode: postCode,
+        address: address,
+        phone: phone,
       },
     });
   };
@@ -70,7 +73,17 @@ export const CompaniesTableTemplateList: FC<Props> = memo((props) => {
                   <TableBodyItem text={data.postCode} />
                   <TableBodyItem text={data.address} />
                   <TableBodyItem text={data.phone} />
-                  <EditItem onClick={() => onClickEdit(data.id)} />
+                  <EditItem
+                    onClick={() =>
+                      onClickEdit(
+                        data.id,
+                        data.name,
+                        data.postCode,
+                        data.address,
+                        data.phone
+                      )
+                    }
+                  />
                 </Tr>
               ))
             : companyData.map((data) => (
@@ -79,7 +92,17 @@ export const CompaniesTableTemplateList: FC<Props> = memo((props) => {
                   <TableBodyItem text={data.postCode} />
                   <TableBodyItem text={data.address} />
                   <TableBodyItem text={data.phone} />
-                  <EditItem onClick={() => onClickEdit(data.id)} />
+                  <EditItem
+                    onClick={() =>
+                      onClickEdit(
+                        data.id,
+                        data.name,
+                        data.postCode,
+                        data.address,
+                        data.phone
+                      )
+                    }
+                  />
                 </Tr>
               ))}
         </Tbody>

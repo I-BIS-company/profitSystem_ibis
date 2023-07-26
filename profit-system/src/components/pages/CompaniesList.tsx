@@ -9,14 +9,7 @@ import { IconButton } from "../atoms/button/IconButton";
 import { useNavigate } from "react-router-dom";
 import { db } from "../../firebase";
 import { collection, getDocs, query, where } from "firebase/firestore";
-
-type CompanyDbType = {
-  id: string;
-  name: string;
-  address: string;
-  postCode: string;
-  phone: string;
-};
+import { CompanyDbType } from "../../types/company/company";
 
 export const CompaniesList: FC = memo(() => {
   const navigate = useNavigate();
