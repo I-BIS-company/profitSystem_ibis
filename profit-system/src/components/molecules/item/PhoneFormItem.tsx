@@ -5,10 +5,20 @@ type Props = {
   handleValueChange1?: (value: string) => void;
   handleValueChange2?: (value: string) => void;
   handleValueChange3?: (value: string) => void;
+  value1?: string;
+  value2?: string;
+  value3?: string;
 };
 
 export const PhoneFormItem: FC<Props> = memo((props) => {
-  const { handleValueChange1, handleValueChange2, handleValueChange3 } = props;
+  const {
+    handleValueChange1,
+    handleValueChange2,
+    handleValueChange3,
+    value1,
+    value2,
+    value3,
+  } = props;
 
   const handlePhoneChange1 = (e: ChangeEvent<HTMLInputElement>) => {
     const value1 = e.target.value;
@@ -36,11 +46,26 @@ export const PhoneFormItem: FC<Props> = memo((props) => {
         電話番号
       </FormLabel>
       <Flex>
-        <Input mx="18px" w="70px" onChange={handlePhoneChange1} />
+        <Input
+          mx="18px"
+          w="70px"
+          onChange={handlePhoneChange1}
+          value={value1}
+        />
         <Text fontSize="2xl">-</Text>
-        <Input mx="18px" w="100px" onChange={handlePhoneChange2} />
+        <Input
+          mx="18px"
+          w="100px"
+          onChange={handlePhoneChange2}
+          value={value2}
+        />
         <Text fontSize="2xl">-</Text>
-        <Input mx="18px" w="100px" onChange={handlePhoneChange3} />
+        <Input
+          mx="18px"
+          w="100px"
+          onChange={handlePhoneChange3}
+          value={value3}
+        />
       </Flex>
     </Flex>
   );
