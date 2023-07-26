@@ -2,7 +2,7 @@ import { Td } from "@chakra-ui/react";
 import { FC } from "react";
 
 type Props = {
-  text: string;
+  text: string | number;
 };
 
 export const TableBodyItem: FC<Props> = (props) => {
