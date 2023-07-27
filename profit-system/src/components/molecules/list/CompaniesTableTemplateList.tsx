@@ -1,41 +1,18 @@
 import { Table, TableContainer, Tbody, Thead, Tr } from "@chakra-ui/react";
-import { memo, FC, useState, useEffect } from "react";
+import { memo, FC } from "react";
 import { TableHeadItem } from "../../atoms/item/TableHeadItem";
 import { TableBodyItem } from "../../atoms/item/TableBodyItem";
 import { EditItem } from "../EditItem";
-import { collection, getDocs } from "firebase/firestore";
-import { db } from "../../../firebase";
 import { useNavigate } from "react-router-dom";
+import { CompanyDbType } from "../../../types/company/CompanyDbType";
 
-type CompanyDbType = {
-  id: string;
-  name: string;
-  address: string;
-  postCode: string;
-  phone: string;
+type Props = {
+  filteredCompanyList: CompanyDbType[];
 };
 
-export const CompaniesTableTemplateList: FC = memo(() => {
+export const CompaniesTableTemplateList: FC<Props> = memo((props) => {
+  const { filteredCompanyList } = props;
   const navigate = useNavigate();
-  const [companyData, setCompanyData] = useState<CompanyDbType[]>([]);
-
-  useEffect(() => {
-    const getCompanyData = async () => {
-      const companyList: CompanyDbType[] = [];
-      const querySnapshot = await getDocs(collection(db, "company"));
-      querySnapshot.forEach((doc) => {
-        companyList.push({
-          id: doc.id,
-          name: doc.data().name,
-          address: doc.data().address,
-          postCode: doc.data().postCode,
-          phone: doc.data().phone,
-        });
-      });
-      setCompanyData(companyList);
-    };
-    getCompanyData();
-  }, []);
 
   const onClickEdit = (
     docId: string,
@@ -68,7 +45,7 @@ export const CompaniesTableTemplateList: FC = memo(() => {
           </Tr>
         </Thead>
         <Tbody alignItems="center">
-          {companyData.map((data) => (
+          {filteredCompanyList.map((data) => (
             <Tr fontSize="14" key={data.id}>
               <TableBodyItem text={data.name} />
               <TableBodyItem text={data.postCode} />
