@@ -28,7 +28,13 @@ export const ProjectCostItem: FC<Props> = memo((props) => {
         {text}
       </FormLabel>
       <Flex alignItems="center">
-        <Input w="400px" mr="8px" onChange={handleInputChange} value={value} />
+        <Input
+          w="400px"
+          mr="8px"
+          onChange={handleInputChange}
+          value={value}
+          type="number"
+        />
         <Text color="gray.600">円</Text>
       </Flex>
     </Flex>
