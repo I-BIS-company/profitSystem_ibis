@@ -16,8 +16,8 @@ export const ProjectRegisterForm: FC = memo(() => {
   const handleProjectName = (newValue: string) => {
     setProjectName(newValue);
   };
-  const handleProjectPrice = (newValue: number) => {
-    setProjectPrice(newValue);
+  const handleProjectPrice = (numberValue: string) => {
+    setProjectPrice(Number(numberValue));
   };
 
   const onClickRegister = async () => {
@@ -38,6 +38,7 @@ export const ProjectRegisterForm: FC = memo(() => {
         <PrimaryFormItem text="案件名" handleValueChange={handleProjectName} />
         <ProjectCostItem
           text="案件金額"
+          value={projectPrice}
           handleValueChange={handleProjectPrice}
         />
         <FormButtonContainer
