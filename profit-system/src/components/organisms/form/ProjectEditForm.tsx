@@ -20,8 +20,8 @@ export const ProjectEditForm: FC = memo(() => {
   const handleProjectName = (newValue: string) => {
     setProjectName(newValue);
   };
-  const handleProjectPrice = (newValue: number) => {
-    setProjectPrice(newValue);
+  const handleProjectPrice = (numberValue: string) => {
+    setProjectPrice(Number(numberValue));
   };
 
   const onClickEdit = async () => {
