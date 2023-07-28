@@ -1,15 +1,21 @@
-import { ReactNode, createContext } from "react";
+import { ReactNode, createContext, useState } from "react";
 
 type LoginUserContextType = {
-  id: number;
-  displayName: string;
+  id: string | null;
+  name: string | null;
 };
 
-export const LoginUserContext = createContext<LoginUserContextType>({});
+export const LoginUserContext = createContext<LoginUserContextType | null>(
+  {} as LoginUserContextType
+);
 
-export const UserProvider = (props: { children: ReactNode }) => {
+export const LoginUserProvider = (props: { children: ReactNode }) => {
   const { children } = props;
+  const [loginUser, setLoginUser] = useState<LoginUserContextType | null>(null);
+
   return (
-    <LoginUserContext.Provider value={{}}>{children}</LoginUserContext.Provider>
+    <LoginUserContext.Provider value={{ loginUser, setLoginUser }}>
+      {children}
+    </LoginUserContext.Provider>
   );
 };
