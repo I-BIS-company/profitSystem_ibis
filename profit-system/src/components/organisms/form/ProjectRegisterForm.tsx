@@ -20,16 +20,20 @@ export const ProjectRegisterForm: FC = memo(() => {
     setProjectPrice(Number(numberValue));
   };
 
+  const moveNavigate = () => {
+    navigate("/projects_list");
+  };
+
   const onClickRegister = async () => {
     await addDoc(collection(db, "project"), {
       name: projectName,
       price: projectPrice,
     });
-    navigate("/projects_list");
+    moveNavigate();
   };
 
   const onClickBack = () => {
-    navigate("/projects_list");
+    moveNavigate();
   };
 
   return (
