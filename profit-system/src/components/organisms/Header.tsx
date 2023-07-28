@@ -1,9 +1,20 @@
 import { Flex, Text } from "@chakra-ui/react";
-import { memo, FC } from "react";
-
+import { memo, FC, useState, useEffect } from "react";
 import { UserName } from "../atoms/UserName";
+import { auth } from "../../firebase";
+import { onAuthStateChanged } from "firebase/auth";
 
 export const Header: FC = memo(() => {
+  const [userName, setUserName] = useState<string | null>("");
+
+  useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        setUserName(user.displayName);
+      }
+    });
+  }, []);
+
   return (
     <Flex
       width="100%"
@@ -19,7 +30,7 @@ export const Header: FC = memo(() => {
 
       {/* 右側の要素 */}
       <Flex w={140} justifyContent="space-between" alignItems="center">
-        <UserName />
+        {userName && <UserName userName={userName} />}
       </Flex>
     </Flex>
   );
