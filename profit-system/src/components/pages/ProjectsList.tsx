@@ -13,6 +13,7 @@ import { useNavigate } from "react-router-dom";
 
 export const ProjectsList: FC = memo(() => {
   const navigate = useNavigate();
+
   const [searchValue, setSearchValue] = useState("");
   const [projectData, setProjectData] = useState<ProjectDbType[]>([]);
   const [filteredProjectList, setFilteredProjectList] = useState<
@@ -22,6 +23,7 @@ export const ProjectsList: FC = memo(() => {
   const handleSearchText = (e: ChangeEvent<HTMLInputElement>) => {
     setSearchValue(e.target.value);
   };
+
 
   useEffect(() => {
     const getProjectData = async () => {
@@ -36,6 +38,7 @@ export const ProjectsList: FC = memo(() => {
       });
       setProjectData(projectList);
       setFilteredProjectList(projectList);
+
     };
     getProjectData();
   }, []);
@@ -68,6 +71,7 @@ export const ProjectsList: FC = memo(() => {
       </MainScreenTopContainer>
       <ContentBgTemplate>
         <ProjectTableTemplateList projectList={filteredProjectList} />
+
       </ContentBgTemplate>
     </>
   );
