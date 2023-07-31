@@ -3,8 +3,27 @@ import { memo, FC } from "react";
 import { TableHeadItem } from "../../atoms/item/TableHeadItem";
 import { TableBodyItem } from "../../atoms/item/TableBodyItem";
 import { EditItem } from "../EditItem";
+import { ProjectDbType } from "../../../types/project/ProjectDbType";
+import { useNavigate } from "react-router-dom";
 
-export const ProjectTableTemplateList: FC = memo(() => {
+type Props = {
+  projectList: ProjectDbType[];
+};
+
+export const ProjectTableTemplateList: FC<Props> = memo((props) => {
+  const navigate = useNavigate();
+  const { projectList } = props;
+
+  const onClickEdit = (docId: string, name: string, price: number) => {
+    navigate("/projects_list/project_edit", {
+      state: {
+        docId: docId,
+        name: name,
+        price: price,
+      },
+    });
+  };
+
   return (
     <TableContainer>
       <Table variant="simple">
@@ -17,16 +36,15 @@ export const ProjectTableTemplateList: FC = memo(() => {
         </Thead>
 
         <Tbody alignItems="center">
-          <Tr fontSize="14">
-            <TableBodyItem text="xxxx向けシステム開発" />
-            <TableBodyItem text="1,000,000円" />
-            <EditItem />
-          </Tr>
-          <Tr fontSize="14">
-            <TableBodyItem text="xxxx向けシステム開発" />
-            <TableBodyItem text="2,000,000円" />
-            <EditItem />
-          </Tr>
+          {projectList.map((data) => (
+            <Tr fontSize="14" key={data.id}>
+              <TableBodyItem text={data.name} />
+              <TableBodyItem text={`${data.price.toLocaleString()}円`} />
+              <EditItem
+                onClick={() => onClickEdit(data.id, data.name, data.price)}
+              />
+            </Tr>
+          ))}
         </Tbody>
       </Table>
     </TableContainer>
