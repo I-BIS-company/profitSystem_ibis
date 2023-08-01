@@ -3,15 +3,32 @@ import { memo, FC } from "react";
 import { TableHeadItem } from "../../atoms/item/TableHeadItem";
 import { TableBodyItem } from "../../atoms/item/TableBodyItem";
 import { EditItem } from "../EditItem";
+import { useNavigate } from "react-router-dom";
+import { UserDbType } from "../../../types/user/UserDbType";
 
-export const UsersTableTemplateList: FC = memo(() => {
-  const userData = [
-    { userName: "ユーザ 太郎", isAdmin: "投稿者", cost: "1,000円" },
-    { userName: "ユーザ 二郎", isAdmin: "投稿者", cost: "1,200円" },
-    { userName: "ユーザ 花子", isAdmin: "管理者", cost: "1,000円" },
-    { userName: "ユーザ 二郎", isAdmin: "投稿者", cost: "1,500円" },
-    { userName: "ユーザ 太郎", isAdmin: "投稿者", cost: "2,000円" },
-  ];
+type Props = {
+  userList: UserDbType[];
+};
+
+export const UsersTableTemplateList: FC<Props> = memo((props) => {
+  const navigate = useNavigate();
+  const { userList } = props;
+
+  const onClickEdit = (
+    id: string,
+    isAdmin: string,
+    name: string,
+    workHourCost: number
+  ) => {
+    navigate("/users_list/user_edit", {
+      state: {
+        id: id,
+        isAdmin: isAdmin,
+        name: name,
+        workHourCost: workHourCost,
+      },
+    });
+  };
 
   return (
     <TableContainer>
@@ -25,12 +42,21 @@ export const UsersTableTemplateList: FC = memo(() => {
           </Tr>
         </Thead>
         <Tbody alignItems="center">
-          {userData.map((user) => (
-            <Tr key={user.userName} fontSize="14">
-              <TableBodyItem text={user.userName} />
-              <TableBodyItem text={user.isAdmin} />
-              <TableBodyItem text={user.cost} />
-              <EditItem />
+          {userList.map((data) => (
+            <Tr key={data.id} fontSize="14">
+              <TableBodyItem text={data.name} />
+              <TableBodyItem text={data.isAdmin ? "管理者" : "投稿者"} />
+              <TableBodyItem text={`${data.workHourCost.toLocaleString()}円`} />
+              <EditItem
+                onClick={() => {
+                  onClickEdit(
+                    data.id,
+                    data.isAdmin ? "管理者" : "投稿者",
+                    data.name,
+                    data.workHourCost
+                  );
+                }}
+              />
             </Tr>
           ))}
         </Tbody>

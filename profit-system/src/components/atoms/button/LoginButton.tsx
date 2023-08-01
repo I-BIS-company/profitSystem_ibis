@@ -22,6 +22,8 @@ export const LoginButton: FC = memo(() => {
           const data = {
             id: uid,
             name: displayName,
+            workHourCost: 1000,
+            isAdmin: false,
           };
           await setDoc(doc(db, "users", uid), data);
         }
