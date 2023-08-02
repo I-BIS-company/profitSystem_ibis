@@ -8,8 +8,7 @@ import { ContentBgTemplate } from "../molecules/container/ContentBgTemplateConta
 import { LogTableTemplateList } from "../molecules/list/LogTableTemplateList";
 import { IconButton } from "../atoms/button/IconButton";
 import { collection, getDocs } from "firebase/firestore";
-import { auth, db } from "../../firebase";
-import { onAuthStateChanged } from "firebase/auth";
+import { db } from "../../firebase";
 
 type LogDbType = {
   id: string;
@@ -21,7 +20,6 @@ type LogDbType = {
 
 export const Log: FC = memo(() => {
   const [selectedMonth, setSelectedMonth] = useState<string>("2023/06");
-  const [loggedUser, setLoggedUser] = useState<string | null>("");
   const [logData, setLogData] = useState<LogDbType[]>([]);
 
   const handleMonthChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
@@ -30,11 +28,6 @@ export const Log: FC = memo(() => {
   };
 
   useEffect(() => {
-    onAuthStateChanged(auth, (user) => {
-      if (user) {
-        setLoggedUser(user.displayName);
-      }
-    });
     const getLogData = async () => {
       const logDataList: LogDbType[] = [];
       const querySnapshot = await getDocs(collection(db, "log"));
@@ -45,7 +38,6 @@ export const Log: FC = memo(() => {
         const MM = workDayDate.getMonth() + 1;
         const DD = workDayDate.getDate();
         const formattedWorkDay = `${YYYY}/${MM}/${DD}`;
-        console.log(formattedWorkDay);
         logDataList.push({
           id: doc.id,
           inChargeProject: doc.data().inChargeProject,
@@ -67,8 +59,6 @@ export const Log: FC = memo(() => {
     };
     getLogData();
   }, []);
-
-  console.log(loggedUser);
 
   return (
     <>

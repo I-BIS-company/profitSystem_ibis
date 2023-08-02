@@ -8,7 +8,7 @@ import { onAuthStateChanged } from "firebase/auth";
 import { auth, db } from "../../../firebase";
 import { Timestamp, addDoc, collection, getDocs } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
-import { ProjectNameList } from "../../../types/project/ProjectNameList";
+import { ProjectNameListType } from "../../../types/project/ProjectNameListType";
 
 export const WorkhourRegisterForm: FC = memo(() => {
   const navigate = useNavigate();
@@ -16,7 +16,9 @@ export const WorkhourRegisterForm: FC = memo(() => {
   const [userName, setUserName] = useState<string | null>("");
   const [inChargeProject, setInChargeProject] = useState("");
   const [workHour, setWorkHour] = useState(0);
-  const [projectNameList, setProjectNameList] = useState<ProjectNameList[]>([]);
+  const [projectNameList, setProjectNameList] = useState<ProjectNameListType[]>(
+    []
+  );
 
   const handleChargeProject = (value: string) => {
     setInChargeProject(value);
@@ -33,7 +35,7 @@ export const WorkhourRegisterForm: FC = memo(() => {
       }
     });
     const getProjectNameData = async () => {
-      const projectList: ProjectNameList[] = [];
+      const projectList: ProjectNameListType[] = [];
       const querySnapshot = await getDocs(collection(db, "project"));
       querySnapshot.forEach((doc) => {
         projectList.push({

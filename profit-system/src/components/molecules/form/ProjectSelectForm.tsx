@@ -1,10 +1,10 @@
 import { Divider, Flex, FormLabel, Select } from "@chakra-ui/react";
 import { ChangeEvent, FC, memo } from "react";
-import { ProjectNameList } from "../../../types/project/ProjectNameList";
+import { ProjectNameListType } from "../../../types/project/ProjectNameListType";
 
 type Props = {
   value?: string;
-  projectNameList?: ProjectNameList[];
+  projectNameList?: ProjectNameListType[];
   onChangeProject?: (value: string) => void;
 };
 
