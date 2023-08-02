@@ -4,7 +4,7 @@ import { ProjectNameList } from "../../../types/project/ProjectNameList";
 
 type Props = {
   value?: string;
-  projectNameList: ProjectNameList[];
+  projectNameList?: ProjectNameList[];
   onChangeProject?: (value: string) => void;
 };
 
@@ -39,7 +39,7 @@ export const ProjectSelectForm: FC<Props> = memo((props) => {
         value={value}
         onChange={handleOnChangeProject}
       >
-        {projectNameList.map((data) => (
+        {projectNameList?.map((data) => (
           <option key={data.id} value={data.name}>
             {data.name}
           </option>
