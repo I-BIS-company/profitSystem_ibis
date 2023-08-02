@@ -1,5 +1,5 @@
 import { Box } from "@chakra-ui/react";
-import { FC, memo, useState } from "react";
+import { FC, memo, useEffect, useState } from "react";
 import { HeadLine } from "../atoms/HeadLine";
 import { DateSearchSelect } from "../atoms/box/DateSearchBox";
 import { MainScreenTopContainer } from "../molecules/container/MainScreenTopContainer";
@@ -7,14 +7,68 @@ import { LogDate } from "../atoms/LogDate";
 import { ContentBgTemplate } from "../molecules/container/ContentBgTemplateContainer";
 import { LogTableTemplateList } from "../molecules/list/LogTableTemplateList";
 import { IconButton } from "../atoms/button/IconButton";
+import { collection, getDocs } from "firebase/firestore";
+import { auth, db } from "../../firebase";
+import { onAuthStateChanged } from "firebase/auth";
+
+type LogDbType = {
+  id: string;
+  inChargeProject: string;
+  name: string;
+  workDay: string;
+  workHours: number;
+};
 
 export const Log: FC = memo(() => {
   const [selectedMonth, setSelectedMonth] = useState<string>("2023/06");
+  const [loggedUser, setLoggedUser] = useState<string | null>("");
+  const [logData, setLogData] = useState<LogDbType[]>([]);
 
   const handleMonthChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const selectedMonth = e.target.value;
     setSelectedMonth(selectedMonth);
   };
+
+  useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        setLoggedUser(user.displayName);
+      }
+    });
+    const getLogData = async () => {
+      const logDataList: LogDbType[] = [];
+      const querySnapshot = await getDocs(collection(db, "log"));
+      querySnapshot.forEach((doc) => {
+        const workDayTimestamp = doc.data().workDay;
+        const workDayDate = workDayTimestamp.toDate();
+        const YYYY = workDayDate.getFullYear();
+        const MM = workDayDate.getMonth() + 1;
+        const DD = workDayDate.getDate();
+        const formattedWorkDay = `${YYYY}/${MM}/${DD}`;
+        console.log(formattedWorkDay);
+        logDataList.push({
+          id: doc.id,
+          inChargeProject: doc.data().inChargeProject,
+          name: doc.data().name,
+          workDay: formattedWorkDay,
+          workHours: doc.data().workHours,
+        });
+        const changeToDate = (strDate: string): Date => {
+          const [year, month, day] = strDate.split("/");
+          return new Date(Number(year), Number(month) - 1, Number(day));
+        };
+        logDataList.sort(
+          (a, b) =>
+            changeToDate(b.workDay).getTime() -
+            changeToDate(a.workDay).getTime()
+        );
+      });
+      setLogData(logDataList);
+    };
+    getLogData();
+  }, []);
+
+  console.log(loggedUser);
 
   return (
     <>
@@ -25,38 +79,18 @@ export const Log: FC = memo(() => {
           <IconButton text="工数を登録する" />
         </Box>
       </MainScreenTopContainer>
-      {selectedMonth === "2023/06" && (
-        <Box>
-          <LogDate date="2023/6/2" />
+      {logData.map((data) => (
+        <Box key={data.id}>
+          <LogDate date={data.workDay} />
           <ContentBgTemplate>
-            <LogTableTemplateList />
-          </ContentBgTemplate>
-          <LogDate date="2023/6/1" />
-          <ContentBgTemplate>
-            <LogTableTemplateList />
-          </ContentBgTemplate>
-        </Box>
-      )}
-      {selectedMonth === "2023/07" && (
-        <Box>
-          <LogDate date="2023/7" />
-          <ContentBgTemplate>
-            <LogTableTemplateList />
+            <LogTableTemplateList
+              name={data.name}
+              inChargeProject={data.inChargeProject}
+              workHours={data.workHours}
+            />
           </ContentBgTemplate>
         </Box>
-      )}
-      {selectedMonth === "2023/08" && (
-        <Box>
-          <LogDate date="2023/8/8" />
-          <ContentBgTemplate>
-            <LogTableTemplateList />
-          </ContentBgTemplate>
-          <LogDate date="2023/8/4" />
-          <ContentBgTemplate>
-            <LogTableTemplateList />
-          </ContentBgTemplate>
-        </Box>
-      )}
+      ))}
     </>
   );
 });
