@@ -4,7 +4,14 @@ import { TableHeadItem } from "../../atoms/item/TableHeadItem";
 import { TableBodyItem } from "../../atoms/item/TableBodyItem";
 import { EditItem } from "../EditItem";
 
-export const LogTableTemplateList: FC = memo(() => {
+type Props = {
+  name: string;
+  inChargeProject: string;
+  workHours: number;
+};
+
+export const LogTableTemplateList: FC<Props> = memo((props) => {
+  const { name, inChargeProject, workHours } = props;
   return (
     <TableContainer>
       <Table variant="simple" border="none">
@@ -19,16 +26,9 @@ export const LogTableTemplateList: FC = memo(() => {
 
         <Tbody alignItems="center">
           <Tr fontSize="14">
-            <TableBodyItem text="ユーザ 太郎" />
-            <TableBodyItem text="xxxxシステム開発" />
-            <TableBodyItem text="10時間" />
-
-            <EditItem />
-          </Tr>
-          <Tr fontSize="14">
-            <TableBodyItem text="ユーザ 太郎" />
-            <TableBodyItem text="xxxxシステム開発" />
-            <TableBodyItem text="5時間" />
+            <TableBodyItem text={name} />
+            <TableBodyItem text={inChargeProject} />
+            <TableBodyItem text={`${workHours}時間`} />
             <EditItem />
           </Tr>
         </Tbody>
