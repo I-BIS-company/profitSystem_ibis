@@ -9,6 +9,7 @@ import { LogTableTemplateList } from "../molecules/list/LogTableTemplateList";
 import { IconButton } from "../atoms/button/IconButton";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../../firebase";
+import { useNavigate } from "react-router-dom";
 
 type LogDbType = {
   id: string;
@@ -19,6 +20,7 @@ type LogDbType = {
 };
 
 export const Log: FC = memo(() => {
+  const navigate = useNavigate();
   const [selectedMonth, setSelectedMonth] = useState<string>("2023/06");
   const [logData, setLogData] = useState<LogDbType[]>([]);
 
@@ -60,13 +62,17 @@ export const Log: FC = memo(() => {
     getLogData();
   }, []);
 
+  const onClickRegisterPage = () => {
+    navigate("/log/workhour_register");
+  };
+
   return (
     <>
       <HeadLine text="ログ" />
       <MainScreenTopContainer>
         <DateSearchSelect value={selectedMonth} onChange={handleMonthChange} />
         <Box>
-          <IconButton text="工数を登録する" />
+          <IconButton text="工数を登録する" onClick={onClickRegisterPage} />
         </Box>
       </MainScreenTopContainer>
       {logData.map((data) => (
@@ -74,6 +80,7 @@ export const Log: FC = memo(() => {
           <LogDate date={data.workDay} />
           <ContentBgTemplate>
             <LogTableTemplateList
+              id={data.id}
               name={data.name}
               inChargeProject={data.inChargeProject}
               workHours={data.workHours}
