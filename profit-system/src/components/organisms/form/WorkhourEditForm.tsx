@@ -18,7 +18,7 @@ export const WorkhourEditForm: FC = memo(() => {
         display="flex"
       >
         <ProjectSelectForm value="A向けシステム開発" />
-        <WorkhourSelectForm value="5" />
+        <WorkhourSelectForm value={5} />
         <FormButtonContainer secondaryPx="10" />
       </FormControl>
     </MainContentContainer>
