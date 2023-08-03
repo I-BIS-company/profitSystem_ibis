@@ -21,8 +21,10 @@ type LogDbType = {
 
 export const Log: FC = memo(() => {
   const navigate = useNavigate();
-  const [selectedMonth, setSelectedMonth] = useState<string>("2023/06");
+  const [selectedMonth, setSelectedMonth] = useState("");
+  const [monthList, setMonthList] = useState<string[]>([]);
   const [logData, setLogData] = useState<LogDbType[]>([]);
+  const [filteredLogData, setFilteredLogData] = useState<LogDbType[]>([]);
 
   const handleMonthChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const selectedMonth = e.target.value;
@@ -32,6 +34,7 @@ export const Log: FC = memo(() => {
   useEffect(() => {
     const getLogData = async () => {
       const logDataList: LogDbType[] = [];
+      const logMonthDataList: string[] = [];
       const querySnapshot = await getDocs(collection(db, "log"));
       querySnapshot.forEach((doc) => {
         const workDayTimestamp = doc.data().workDay;
@@ -56,11 +59,37 @@ export const Log: FC = memo(() => {
             changeToDate(b.workDay).getTime() -
             changeToDate(a.workDay).getTime()
         );
+        const formatedWorkMonth = formattedWorkDay
+          .split("/")
+          .slice(0, 2)
+          .join("/");
+        if (!logMonthDataList.includes(formatedWorkMonth)) {
+          logMonthDataList.push(formatedWorkMonth);
+        }
+        const changeMonthToDate = (strDate: string): Date => {
+          const [year, month] = strDate.split("/");
+          return new Date(Number(year), Number(month) - 1);
+        };
+        logMonthDataList.sort(
+          (a, b) =>
+            changeMonthToDate(b).getTime() - changeMonthToDate(a).getTime()
+        );
       });
+      setMonthList(logMonthDataList);
       setLogData(logDataList);
+      setFilteredLogData(logDataList);
     };
     getLogData();
   }, []);
+
+  useEffect(() => {
+    const filteredLogDataList = logData.filter((data) => {
+      if (data.workDay.indexOf(selectedMonth) !== -1) {
+        return data;
+      }
+    });
+    setFilteredLogData(filteredLogDataList);
+  }, [selectedMonth, logData]);
 
   const onClickRegisterPage = () => {
     navigate("/log/workhour_register");
@@ -70,12 +99,16 @@ export const Log: FC = memo(() => {
     <>
       <HeadLine text="ログ" />
       <MainScreenTopContainer>
-        <DateSearchSelect value={selectedMonth} onChange={handleMonthChange} />
+        <DateSearchSelect
+          value={selectedMonth}
+          onChange={handleMonthChange}
+          logMonthList={monthList}
+        />
         <Box>
           <IconButton text="工数を登録する" onClick={onClickRegisterPage} />
         </Box>
       </MainScreenTopContainer>
-      {logData.map((data) => (
+      {filteredLogData.map((data) => (
         <Box key={data.id}>
           <LogDate date={data.workDay} />
           <ContentBgTemplate>
