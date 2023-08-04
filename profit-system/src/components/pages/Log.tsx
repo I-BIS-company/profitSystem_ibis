@@ -77,19 +77,20 @@ export const Log: FC = memo(() => {
       });
       setMonthList(logMonthDataList);
       setLogData(logDataList);
-      setFilteredLogData(logDataList);
     };
     getLogData();
   }, []);
 
   useEffect(() => {
     const filteredLogDataList = logData.filter((data) => {
-      if (data.workDay.indexOf(selectedMonth) !== -1) {
+      if (selectedMonth == "") {
+        setSelectedMonth(monthList[0]);
+      } else if (data.workDay.indexOf(selectedMonth) !== -1) {
         return data;
       }
     });
     setFilteredLogData(filteredLogDataList);
-  }, [selectedMonth, logData]);
+  }, [selectedMonth, logData, monthList]);
 
   const onClickRegisterPage = () => {
     navigate("/log/workhour_register");
