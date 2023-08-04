@@ -12,13 +12,7 @@ export const DateSearchSelect: FC<Props> = memo((props) => {
 
   return (
     <Box>
-      <Select
-        bg="white"
-        outline="none"
-        value={value}
-        onChange={onChange}
-        placeholder="日付で検索"
-      >
+      <Select bg="white" outline="none" value={value} onChange={onChange}>
         {logMonthList.map((month) => (
           <option key={month} value={month}>
             {month}
